@@ -1,7 +1,7 @@
 {
 	"/": [],
-	"/aboutme": [],
-	"/contactme": [],
-	"/projects": [],
-	"/test": []
+	"/about": [],
+	"/contact": [],
+	"/events": [],
+	"/events/[slug]": []
 }

@@ -41,7 +41,7 @@
 		margin-left: 0;
 		border-radius: 5px;
 		text-decoration: none;
-		color: white;
+		color: black;
 		transition: all 0.2s linear;
 	}
 

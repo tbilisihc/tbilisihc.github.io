@@ -47,6 +47,7 @@
 		"svelte"
 	],
 	"dependencies": {
-		"gh-pages": "^6.3.0"
+		"gh-pages": "^6.3.0",
+		"svelte-spa-router": "^4.0.1"
 	}
 }

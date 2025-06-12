@@ -5,11 +5,11 @@
 <div id="root">
 	<div>
 		<div id="text">
-			<img src = "https://avatars.githubusercontent.com/u/175145001?v=4" style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;" alt="Drew's Avatar" />
+			<img src = "https://tbilisi.hackclub.com/assets/logo/ruby_logo.png" style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;" alt="ths's Avatar" />
 			<div id  = "textContent">
-			<h1 id="YoHeading">Drew (どりゅう)</h1>
+			<h1 id="YoHeading">Tbilisi Hack Club</h1>
 			<h5 id="boutMe">
-				Software engineer <br/> Based in Tbilisi<img
+				Non-profit Organization <br/> Based in Tbilisi<img
 					id="whitespace"
 					src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/1feaf8b5942eca66775bc7ccadc8619cbf54cd07_1af71bf06d88b950.png"
 					alt="!"
@@ -49,7 +49,7 @@
 
 	#YoHeading {
 		margin: 0px;
-		color: aliceblue;
+		color: black;
 		font-size: 50px;
 	}
 	#boutMe {

@@ -4,56 +4,60 @@
 </script>
 
 <div id="yes">
+	<div style="margin-right: auto;"> 
 	<Link
 		link="/"
 		text="Home"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/4c0390f6c9a91b83f3ae6da9d5b5a75181472fd0_home_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
+		logo="https://avatars.githubusercontent.com/u/213840567?s=200&v=4"
+		
 	/>
+	</div>
 	<Link
-		link="/aboutme"
+		link="/about"
 		text="About"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/978be0e162f6aebd63c1237006f065030a90264e_person_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
+		logo="https://img.icons8.com/?size=100&id=oYto3gDewkU6&format=png&color=000000"
 	/>
 	<Link
-		link="/contactme"
+		link="/contact"
 		text="Contact"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/fc3f312e696ec561d201c3ffe0874df1e09e70f0_waving_hand_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
+		logo="https://img.icons8.com/?size=100&id=1eCbkp60SQm7&format=png&color=000000"
 	/>
 	<Link
-		link="/projects"
-		text="Projects"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7b8b6bf02ed987b0e68ce5c2814ea408d666caf5_folder_code_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
+		link="/events"
+		text="Events"
+		logo="https://img.icons8.com/?size=100&id=5Mj2oJryMY4Q&format=png&color=000000"
 	/>
 	<Link
-		link="https://github.com/andrinoff"
+		link="https://github.com/tbilisihc"
 		text="Github"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/f202b6faccfd5cc46299b976c2635fee60b55aa0_github-mark-white.svg"
+		logo="https://img.icons8.com/?size=100&id=62856&format=png&color=000000"
 	/>
 </div>
 <div id="no">
 	<LinkMob
-		link="/"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/4c0390f6c9a91b83f3ae6da9d5b5a75181472fd0_home_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
-	/>
+		link="/about"
+		logo="https://img.icons8.com/?size=100&id=oYto3gDewkU6&format=png&color=000000"
+		/>
 	<LinkMob
 		link="/aboutme"
 		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/978be0e162f6aebd63c1237006f065030a90264e_person_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
 	/>
 	<LinkMob
-		link="/contactme"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/fc3f312e696ec561d201c3ffe0874df1e09e70f0_waving_hand_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
+		link="/contact"
+		logo="https://img.icons8.com/?size=100&id=1eCbkp60SQm7&format=png&color=000000"
 	/>
 	<LinkMob
-		link="/projects"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/7b8b6bf02ed987b0e68ce5c2814ea408d666caf5_folder_code_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
+		link="/events"
+		logo="https://img.icons8.com/?size=100&id=5Mj2oJryMY4Q&format=png&color=000000"
 	/>
 	<LinkMob
-		link="https://github.com/andrinoff"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/f202b6faccfd5cc46299b976c2635fee60b55aa0_github-mark-white.svg"
+		link="https://github.com/tbilisihc"
+		logo="https://img.icons8.com/?size=100&id=62856&format=png&color=000000"
 	/>
 </div>
 
 <style>
+	@import "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
 	#yes {
 		display: flex;
 	}
