@@ -6,7 +6,8 @@
                 <a class="text-[#49709c] text-base font-normal leading-normal min-w-40" href="https://tbilisi.hackclub.com/terms-and-conditions">Terms of Service</a>
                 <a class="text-[#49709c] text-base font-normal leading-normal min-w-40" href="https://tbilisi.hackclub.com/contact">Contact Us</a>
               </div>
-              <p class="text-[#49709c] text-base font-normal leading-normal">@2025 Tbilisi Hack Club. All rights reserved.</p>
+              <p class="text-[#49709c] font-normal whitespace-nowrap">@2025 Tbilisi Hack Club.</p>
+              <p class="text-[#49709c] font-normal whitespace-nowrap">All rights reserved.</p>
             </footer>
           </div>
         </footer>

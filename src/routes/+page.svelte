@@ -6,7 +6,7 @@
 		<div id="text">
 			<img src = "https://tbilisi.hackclub.com/assets/logo/ruby_logo.png" style="min-width: 200px; max-width: 200px; min-height: 200px; max-height: 200px; object-fit: cover; border-radius: 50%;" alt="ths's Avatar" />
 			<div id  = "textContent">
-			<h1 id="YoHeading">Tbilisi Hack Club</h1>
+			<h1 id="YoHeading" class = "text-4xl md: text-2xl">Tbilisi Hack Club</h1>
 			<h5 id="boutMe">
 				Non-profit Organization <br/> Based in Tbilisi<img
 					id="whitespace"
@@ -16,7 +16,7 @@
 			</h5>
 			</div>
 		</div>
-		<hr />
+		
 		
 	</div>
 </div>
@@ -30,7 +30,7 @@
 	}
 
 	#text {
-		margin: 20px;
+		margin: 100px;
 		display: flex;
 		flex-direction: row;
 	}
