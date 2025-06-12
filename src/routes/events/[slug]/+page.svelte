@@ -12,9 +12,9 @@
 
 {#if $event}
 <div style="text-align: center; display: flex; flex-direction: column; align-items: center; margin-top: 2em;">
-    <img src={$event.Image} alt="Event Image" style="width: 70%; height: auto; object-fit: cover; margin-bottom: 1em;" />
+    <img src={$event.Image} alt="Event Image" style="width: 30%; height: auto; object-fit: cover; margin-bottom: 1em;" />
     </div>
-  <h1>{$event.Name}</h1> 
+  <h1>&nbsp {$event.Name}</h1> 
   <p id = "date">{$event.Date}</p>
   <p id ="description">{@html $event.BigDescription}</p>
 {:else}

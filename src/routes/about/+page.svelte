@@ -7,15 +7,15 @@
 </script>
 
 <div id="root">
-	<h1>About Us</h1>
-	<h2> Who are we?</h2>
+	<h1 class = "text-4xl">About Us</h1>
+	<h1 class = "text-2xl mt-20"> Who are we?</h1>
 	<br />
-	<p id ="aboutText">
-		Tbilisi Hack Club is a non-profit organization based in Tbilisi, Georgia.
-		We are a community of young people who are passionate about technology,
-		coding, and innovation. Our mission is to empower the next generation of
-		tech leaders through education, collaboration, and hands-on experience.
-	<h2>Our team</h2>
+	<h1 id ="aboutText" class = "text-xl mx-20">
+		&nbsp Welcome to Tbilisi Hack Club, a creative community for young makers, coders, and tech enthusiasts. We're a member of the global Hack Club network, providing a supportive space to learn, build, and share your passion for technology.
+		<br />
+		<br />
+		&nbsp Whether you're a seasoned programmer or just starting, our club is your platform to collaborate on projects, explore new technologies, and turn your innovative ideas into reality. Join us to develop your skills, meet like-minded peers, and be part of Tbilisi's growing tech scene. Let's build the future together, one line of code at a time.</h1>
+	<h1 class = "text-2xl mt-20">Our team</h1>
 		<ul>
 			{#each Object.entries(team) as [name, photo]}
 				<li id = "teamMember">
@@ -39,9 +39,10 @@
 	}
 	#aboutText {
 		width: 80%;
-		text-align: center;
+		text-align: start;
 		font-size: 18px;
 		line-height: 1.6;
+		line-break: auto;
 		color: #333;
 	}
 	#name {

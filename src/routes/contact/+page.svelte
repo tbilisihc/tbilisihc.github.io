@@ -5,7 +5,7 @@
 <div id="root">
 	<div>
 		<div id="me">
-			<h3 id="YoHeading">
+			<h3 id="YoHeading" class="text-center">
 				Contact Us:
 			</h3>
 

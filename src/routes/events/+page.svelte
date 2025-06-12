@@ -6,16 +6,16 @@
 </script>
 
 <div id="root">
-	<h1>Upcoming Events</h1>
+	<h1 class = "text-2xl font-bold mt-20 mb-20">Upcoming Events</h1>
 	<div id="grid">
 	{#each Event_list.filter(event => !event.Past) as Event}
 			<div class="project-card">
 				<h2>{@html Event.Name}</h2>
 				<p>{@html Event.Date}</p>
-				<p>{@html Event.Description}</p>
+				<p>&nbsp {@html Event.Description}</p>
 				
-				<div class ="image-cover">
-				<img class="main-image" src={Event.Image} alt="Project" />
+				<div id ="image-cover">
+				<img id="main-image" src={Event.Image} alt="Project" />
 				</div>
 				<a href={"/events/" + Event.Slug} target="_blank"
 					><button class="ViewProject"> Open Details </button></a
@@ -24,7 +24,7 @@
 			{/each}
 			</div>
 			<br />
-		<h1>Past events</h1>
+		<h1 class="text-2xl font-bold mt-20 mb-20">Past events</h1>
 		<div id="grid">
 			{#each Event_list.filter(event => event.Past) as Event}
 			<div class="project-card">
@@ -33,8 +33,8 @@
 				<div class="image-gallery">
 					<p>{@html Event.Date}</p>
 				</div>
-				<div class ="image-cover">
-				<img class="main-image" src={Event.Image} alt="Project" />
+				<div id ="image-cover">
+				<img id="main-image" src={Event.Image} alt="Project" />
 				</div>
 				<a href={"/events/" + Event.Slug} target="_blank"
 					><button class="ViewProject"> Open Details </button></a
@@ -61,6 +61,17 @@
 	p {
 		color: #818181;
 	}
+
+	.project-card {
+		border: 3px solid #333;
+		max-width: 250px;
+		margin: 10px;
+		padding: 5px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center
+	}
 	#grid {
 		display: flex;
 		flex-wrap: wrap;
@@ -75,8 +86,9 @@
 		padding: 5px;
 		padding-bottom: 0px;
 	}
-	.image-gallery {
+	#image-gallery {
 		display: flex;
+		
 		gap: 10px;
 		margin-top: 10px;
 		margin-bottom: 10px;
@@ -86,7 +98,7 @@
 		height: 30px;
 		object-fit: fill;
 	}
-	.image-cover {
+	#image-cover {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -94,11 +106,15 @@
 		height: 146px;
 		width: 246px;
 	}
-	.main-image {
+	#main-image {
 		max-height: 146px;
-		max-width: 246px;
+		min-height: 146px;
+		max-width: 226px;
+		min-width: 226px;
 		text-align: center;
+		margin:auto;
 		border: 2px solid #2e2e2e;
+		object-fit: contain;
 	}
 	.ViewProject {
 		background-color: #242424;
@@ -106,6 +122,7 @@
 		border: none;
 		margin-bottom: 5px;
 		padding: 10px;
+		margin-top: auto;
 		width: 100%;
 		cursor: pointer;
 		font-size: 16px;

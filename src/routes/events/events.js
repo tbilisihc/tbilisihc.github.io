@@ -2,7 +2,7 @@
 
 export let Event_list = [
 		{
-			Name: "Git <br/> and Github",
+			Name: "Git and Github",
 			Date: "01/08/2025",
 			Description: `<p>Learn the basics of Git and Github, including how to create a repository, commit changes, and collaborate with others.</p>`,
 			Image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*qwFrTMnFkcd3U9rFKwwacw.png",
@@ -25,7 +25,7 @@ export let Event_list = [
             Name: "Web Development with React",
             Date: "01/10/2025",
             Description: `<p>Explore the world of web development using React, a popular JavaScript library for building user interfaces.</p>`,
-            Image: "https://reactjs.org/logo-og.png",
+            Image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHR_P-7OxbDx2-EpUFbKc24Ee2jKJYms_gUw&s",
             BigDescription: `<p>React is a powerful library for building interactive user interfaces. In this event, you will learn how to create components, manage state, and handle events in React applications.</p>
             <p>This event is ideal for those who have some basic knowledge of JavaScript and want to dive into modern web development practices.</p>`,
             Slug: "web-development-with-react",
