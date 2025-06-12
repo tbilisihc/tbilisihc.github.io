@@ -51,8 +51,7 @@
 	#links {
 		width: fit-content;
 		display: flex;
-		flex-direction: column;
-
+		flex-direction: row;
 		gap: 10px;
 	}
 
