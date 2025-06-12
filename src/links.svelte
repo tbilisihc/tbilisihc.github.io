@@ -35,12 +35,12 @@
 </div>
 <div id="no">
 	<LinkMob
-		link="/about"
-		logo="https://img.icons8.com/?size=100&id=oYto3gDewkU6&format=png&color=000000"
+		link="/"
+		logo="https://avatars.githubusercontent.com/u/213840567?s=200&v=4"
 		/>
 	<LinkMob
-		link="/aboutme"
-		logo="https://hc-cdn.hel1.your-objectstorage.com/s/v3/978be0e162f6aebd63c1237006f065030a90264e_person_24dp_e3e3e3_fill0_wght400_grad0_opsz24.svg"
+		link="/about"
+		logo="https://img.icons8.com/?size=100&id=oYto3gDewkU6&format=png&color=000000"
 	/>
 	<LinkMob
 		link="/contact"

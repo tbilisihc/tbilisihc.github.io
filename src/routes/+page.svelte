@@ -1,5 +1,4 @@
 <script>
-	import Links from "./links.svelte";
 </script>
 
 <div id="root">
