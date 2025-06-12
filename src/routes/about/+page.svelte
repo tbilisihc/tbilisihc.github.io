@@ -1,9 +1,16 @@
 <script>
 	let team = 
-	{
-		"Drew Smirnoff": "https://avatars.githubusercontent.com/u/175145001?v=4",
-		"Boris Mirakov": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_MYPQuoqZhenNT8BsFfPdmW66XAcPbx0vOg&s",
-	}
+	[
+		{
+			Name: "Drew Smirnoff",
+			Url: "https://tbilisi.hackclub.com/drew/"
+		},
+		{
+			Name: "Boris Mirakov",
+			Url: "https://tbilisi.hackclub.com/bormir/"
+		}
+	]
+
 </script>
 
 <div id="root">
@@ -17,10 +24,10 @@
 		&nbsp Whether you're a seasoned programmer or just starting, our club is your platform to collaborate on projects, explore new technologies, and turn your innovative ideas into reality. Join us to develop your skills, meet like-minded peers, and be part of Tbilisi's growing tech scene. Let's build the future together, one line of code at a time.</h1>
 	<h1 class = "text-2xl mt-20">Our team</h1>
 		<ul>
-			{#each Object.entries(team) as [name, photo]}
+			{#each team as teamMember}
 				<li id = "teamMember">
-					<img src={photo} alt={name} style="width: 50px; height: 50px; border-radius: 50%;" />
-					<p id = "name">{name}</p>
+					<img src={teamMember.Url +'avatar.png'} alt={teamMember.Name} style="width: 50px; height: 50px; border-radius: 50%;" />
+					<p id = "name"><a class = "underline" href ={teamMember.Url}>{teamMember.Name}</a></p>
 				</li>
 			{/each}
 		</ul>
