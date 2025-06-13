@@ -15,14 +15,14 @@
 
 <div id="root">
 	<h1 class = "text-4xl">About Us</h1>
-	<h1 class = "text-2xl mt-20"> Who are we?</h1>
+	<h1 class = "text-2xl"> Who are we?</h1>
 	<br />
 	<h1 id ="aboutText" class = "text-xl mx-20">
 		&nbsp Welcome to Tbilisi Hack Club, a creative community for young makers, coders, and tech enthusiasts. We're a member of the global Hack Club network, providing a supportive space to learn, build, and share your passion for technology.
 		<br />
 		<br />
 		&nbsp Whether you're a seasoned programmer or just starting, our club is your platform to collaborate on projects, explore new technologies, and turn your innovative ideas into reality. Join us to develop your skills, meet like-minded peers, and be part of Tbilisi's growing tech scene. Let's build the future together, one line of code at a time.</h1>
-	<h1 class = "text-2xl mt-20">Our team</h1>
+	<h1 class = "text-2xl">Get to know our team!</h1>
 		<ul>
 			{#each team as teamMember}
 				<li id = "teamMember">
@@ -37,6 +37,9 @@
 <style>
 	* {
 		margin: 0;
+	}
+	h1 {
+		margin-top: 20px;
 	}
 	#root {
 		display: flex;
