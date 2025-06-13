@@ -15,17 +15,17 @@
 	<Link
 		link="/about"
 		text="About"
-		logo="https://img.icons8.com/?size=100&id=oYto3gDewkU6&format=png&color=000000"
+		logo="https://img.icons8.com/?size=100&id=82742&format=png&color=000000"
 	/>
 	<Link
 		link="/contact"
 		text="Contact"
-		logo="https://img.icons8.com/?size=100&id=1eCbkp60SQm7&format=png&color=000000"
+		logo="https://img.icons8.com/?size=100&id=kAuzNyuqb98q&format=png&color=000000"
 	/>
 	<Link
 		link="/events"
 		text="Events"
-		logo="https://img.icons8.com/?size=100&id=5Mj2oJryMY4Q&format=png&color=000000"
+		logo="https://img.icons8.com/?size=100&id=4LZxtKlARvqr&format=png&color=000000"
 	/>
 	<Link
 		link="https://github.com/tbilisihc"
@@ -40,15 +40,15 @@
 		/>
 	<LinkMob
 		link="/about"
-		logo="https://img.icons8.com/?size=100&id=oYto3gDewkU6&format=png&color=000000"
+		logo="https://img.icons8.com/?size=100&id=82742&format=png&color=000000"
 	/>
 	<LinkMob
 		link="/contact"
-		logo="https://img.icons8.com/?size=100&id=1eCbkp60SQm7&format=png&color=000000"
+		logo="https://img.icons8.com/?size=100&id=kAuzNyuqb98q&format=png&color=000000"
 	/>
 	<LinkMob
 		link="/events"
-		logo="https://img.icons8.com/?size=100&id=5Mj2oJryMY4Q&format=png&color=000000"
+		logo="https://img.icons8.com/?size=100&id=4LZxtKlARvqr&format=png&color=000000"
 	/>
 	<LinkMob
 		link="https://github.com/tbilisihc"
