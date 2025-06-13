@@ -24,22 +24,7 @@
 			flex-direction: column;
 			align-items: center;
 		}
-		#YoHeading {
-			text-align: center;
-		}
 	}
-
-	#me {
-		display: flex;
-		margin: 10px;
-		align-items: center;
-	}
-	#YoHeading {
-		margin: 0px;
-		color: aliceblue;
-		font-size: 30px;
-	}
-
 	hr {
 		width: 99%;
 		border: 1px solid #333;

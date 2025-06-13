@@ -65,8 +65,4 @@
 		margin: 10px 10px 10px 10px;
 		gap: 10px;
 	}
-	h2 {
-		margin-top: 20px;
-		margin-bottom: 5px;
-	}
 </style>
