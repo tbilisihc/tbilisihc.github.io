@@ -1,7 +1,7 @@
 {
 	"/": [],
 	"/about": [],
-	"/contact": [],
 	"/events": [],
-	"/events/[slug]": []
+	"/events/[slug]": [],
+	"/join": []
 }
