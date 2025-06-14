@@ -19,12 +19,7 @@
 		margin: 10px;
 		border-radius: 10px;
 	}
-	@media (max-width: 620px) {
-		#root {
-			flex-direction: column;
-			align-items: center;
-		}
-	}
+
 	hr {
 		width: 99%;
 		border: 1px solid #333;
