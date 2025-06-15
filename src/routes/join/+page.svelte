@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
+	
 	onMount(() => {
 		const form = document.getElementById("form");
 		if (form) {
@@ -12,17 +12,37 @@
 				const name = nameInput ? nameInput.value : "";
 				const email = emailInput ? emailInput.value : "";
 				const phone = phoneInput ? phoneInput.value : "";
-				const wh = "https://discord.com/api/webhooks/1383374193285926962/cK_tuDE8on2Za-9Dv5a9KzRdDEcw1s-510TWDhTCqBC6Yisaqrc3X38pi0L6zFkamZB3";
+				const wh = "https://secure-discord-webhook.vercel.app/api/webhook";
 				const contents = `New signup \n Name: ${name}\n Email: ${email}\n Phone: ${phone}`;
-				const request = new XMLHttpRequest();
-				request.open("POST", wh);
-				request.setRequestHeader("Content-Type", "application/json");
-				const params = {
-					content: contents
-				};
-				request.send(JSON.stringify(params));
-				alert("Thank you for signing up!")
-				location.href = "/";
+				const vercelWebhookUrl = 'https://secure-discord-webhook.vercel.app/api/webhook';
+				async function sendDiscordWebhook(message: string) {
+					try {
+						const response = await fetch(vercelWebhookUrl, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+							},
+							body: JSON.stringify({ content: message }),
+						});
+
+						if (response.ok) {
+							const data = await response.json();
+							console.log('Webhook sent successfully:', data);
+						} else {
+							console.error('Error sending webhook:', response.status, response.statusText);
+							try {
+								const errorData = await response.json();
+								console.error('Error details:', errorData);
+							} catch (jsonError) {
+								console.error('Could not parse error JSON:', jsonError);
+							}
+						}
+					} catch (error) {
+						console.error('Fetch error:', error);
+					}
+				}
+				sendDiscordWebhook(contents);
+				location.href="/join"
 			});
 		}
 	});
