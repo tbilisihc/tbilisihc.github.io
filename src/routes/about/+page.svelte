@@ -181,6 +181,9 @@
 		align-items: center;
 		padding: 20px;
 	}
+	section {
+		margin-top: 50px;
+	}
 	#aboutText {
 		width: 80%;
 		text-align: start;
