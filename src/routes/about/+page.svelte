@@ -169,7 +169,7 @@
 
 <style>
 	* {
-		margin: 0;
+		
 	}
 	h1 {
 		margin-top: 20px;
@@ -181,9 +181,7 @@
 		align-items: center;
 		padding: 20px;
 	}
-	section {
-		margin-top: 50px;
-	}
+	
 	#aboutText {
 		width: 80%;
 		text-align: start;
