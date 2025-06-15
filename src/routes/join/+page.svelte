@@ -42,7 +42,8 @@
 					}
 				}
 				sendDiscordWebhook(contents);
-				location.href="/join"
+				alert('Thank you for signing up!')
+				location.href="/"
 			});
 		}
 	});
