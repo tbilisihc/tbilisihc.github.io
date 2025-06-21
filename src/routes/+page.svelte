@@ -57,7 +57,7 @@
       <section id="events" class="py-16 md:py-24">
         <div class="container mx-auto px-6">
           <h1
-            class="bg-blue-500 text-white font-bold py-3 px-8 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:bg-blue-600;"
+            class="bg-blue-500 text-white font-bold py-3 px-8 rounded-lg shadow-md text-center mb-8 text-2xl"
             id="whats"
           >
             What's Happening?
@@ -65,7 +65,7 @@
           <div class="grid md:grid-cols-3 gap-8">
             <!-- Card 1: Workshops -->
             <div
-              class="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:-translate-y-2;"
+              class="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:-translate-y-2; transform transition-transform duration-300 hover:scale-105 hover:bg-blue-600;"
             >
               <div class="flex items-center mb-4">
                 <svg
@@ -91,7 +91,7 @@
             </div>
             <!-- Card 2: Club Meetings -->
             <div
-              class="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:-translate-y-2;"
+              class="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:-translate-y-2; transform transition-transform duration-300 hover:scale-105 hover:bg-blue-600;"
             >
               <div class="flex items-center mb-4">
                 <svg
@@ -117,7 +117,7 @@
             </div>
             <!-- Card 3: Hackathons -->
             <div
-              class="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:-translate-y-2;"
+              class="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:-translate-y-2; transform transition-transform duration-300 hover:scale-105 hover:bg-blue-600;"
             >
               <div class="flex items-center mb-4">
                 <svg
