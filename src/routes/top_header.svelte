@@ -4,9 +4,9 @@
         <div class="globe-container">
         <a href="/">
         <div class="flag-container">
-        <img 
-            src="https://tbilisi.hackclub.com/assets/transparent/flag.png" 
-            alt="Tbilisi" 
+        <img
+            src="https://tbilisi.hackclub.com/assets/assets/transparent/flag.png"
+            alt="Tbilisi"
             class="waving-flag"
         >
     </div>
@@ -18,7 +18,7 @@
             <a href="/join" class="text-gray-600 hover:text-blue-500 transition-colors">Join</a>
         </div>
         <a href="/about" class="md:hidden text-gray-600 hover:text-blue-500 transition-colors">About</a>
-          <a href="/events" class="md:hidden  text-gray-600 hover:text-blue-500 transition-colors">Events</a> 
+          <a href="/events" class="md:hidden  text-gray-600 hover:text-blue-500 transition-colors">Events</a>
          <a href="/join" class="md:hidden bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors">Join</a>
     </nav>
 </header>
@@ -31,7 +31,7 @@
             text-align: center;
             border-radius: 1.5rem; /* More rounded corners */
         }
-        
+
         /* The image element for the flag */
         .waving-flag {
             max-width: 100%;
@@ -47,7 +47,7 @@
         @keyframes wave {
             0%, 100% {
                 transform: translateX(0);
-                
+
             }
             25% {
                 transform: translateX(-10px); /* Move left */
@@ -67,12 +67,12 @@
     height: 50px;
     border-radius: 50%;
     position: relative;
-    transform-style: preserve-3d; /* This is key for 3D children 
+    transform-style: preserve-3d; /* This is key for 3D children
     transition: transform 0.3s ease-out;
     cursor: pointer;
   }
 
-  
+
   .globe-container:hover .globe-button {
     animation: spin 12s linear infinite;
   }
@@ -85,17 +85,17 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    
-    
+
+
     background: url('https://avatars.githubusercontent.com/u/213840567?s=200&v=4');
-    background-size: 200% 100%; 
+    background-size: 200% 100%;
     background-repeat: repeat-x;
-    
-    
+
+
     animation: move-map 12s linear infinite;
   }
-  
-  
+
+
   .globe-button::after {
     content: '';
     position: absolute;
@@ -115,13 +115,13 @@
     }
   }
 
-  
+
   @keyframes move-map {
     from {
       background-position: 0% 0;
     }
     to {
-      background-position: -200% 0; 
+      background-position: -200% 0;
     }
   } */
 </style>
