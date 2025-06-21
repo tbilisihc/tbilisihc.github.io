@@ -60,7 +60,7 @@
   }
   @media (max-width: 768px) {
     .waving-flag {
-      width: 150px;
+      width: 100px;
       left: -20px;
     }
   }
