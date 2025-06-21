@@ -1,64 +1,90 @@
-
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="globe-container">
-        <a href="/">
+<header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="globe-container">
+      <a href="/">
         <div class="flag-container">
-        <img
+          <img
             src="https://tbilisi.hackclub.com/assets/assets/transparent/flag.png"
             alt="Tbilisi"
             class="waving-flag"
-        >
+          />
+        </div>
+      </a>
     </div>
-        </a>
-        </div>
-        <div class="hidden md:flex space-x-8">
-            <a href="/about" class="text-gray-600 hover:text-blue-500 transition-colors">About</a>
-            <a href="/events" class="text-gray-600 hover:text-blue-500 transition-colors">Events</a>
-            <a href="/join" class="text-gray-600 hover:text-blue-500 transition-colors">Join</a>
-        </div>
-        <a href="/about" class="md:hidden text-gray-600 hover:text-blue-500 transition-colors">About</a>
-          <a href="/events" class="md:hidden  text-gray-600 hover:text-blue-500 transition-colors">Events</a>
-         <a href="/join" class="md:hidden bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors">Join</a>
-    </nav>
+    <div class="hidden md:flex space-x-8">
+      <a
+        href="/about"
+        class="text-gray-600 hover:text-blue-500 transition-colors">About</a
+      >
+      <a
+        href="/events"
+        class="text-gray-600 hover:text-blue-500 transition-colors">Events</a
+      >
+      <a
+        href="/join"
+        class="text-gray-600 hover:text-blue-500 transition-colors">Join</a
+      >
+    </div>
+    <a
+      href="/about"
+      class="md:hidden text-gray-600 hover:text-blue-500 transition-colors"
+      >About</a
+    >
+    <a
+      href="/events"
+      class="md:hidden text-gray-600 hover:text-blue-500 transition-colors"
+      >Events</a
+    >
+    <a
+      href="/join"
+      class="md:hidden bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+      >Join</a
+    >
+  </nav>
 </header>
 
 <style>
+  .flag-container {
+    text-align: center;
+    border-radius: 1.5rem; /* More rounded corners */
+  }
 
-
-
-    .flag-container {
-            text-align: center;
-            border-radius: 1.5rem; /* More rounded corners */
-        }
-
-        /* The image element for the flag */
-        .waving-flag {
-            max-width: 100%;
-            width: 100px;
-            transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
-            transform-origin: bottom left; /* Set the origin for the wave effect */
+  /* The image element for the flag */
+  .waving-flag {
+    max-width: 100%;
+    width: 200px;
+    position: absolute;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    transform-origin: bottom left; /* Set the origin for the wave effect */
+    top: 10px;
+  }
+  @media (max-width: 768px) {
+    .waving-flag {
+      width: 150px;
+      left: 0px;
     }
-    .waving-flag:hover {
-            animation: wave 1.5s infinite ease-in-out;
-        }
+  }
 
-        /* Keyframes for the wave animation */
-        @keyframes wave {
-            0%, 100% {
-                transform: translateX(0);
+  .waving-flag:hover {
+    animation: wave 1.5s infinite ease-in-out;
+  }
 
-            }
-            25% {
-                transform: translateX(-10px); /* Move left */
-                transform: rotateX(-20deg);
-            }
-            75% {
-                transform: translateX(10px); /* Move right */
-                transform: rotateX(20deg);
-            }
-        }
-/* .globe-container {
+  /* Keyframes for the wave animation */
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px); /* Move left */
+      transform: rotateX(-20deg);
+    }
+    75% {
+      transform: translateX(10px); /* Move right */
+      transform: rotateX(20deg);
+    }
+  }
+  /* .globe-container {
     perspective: 800px;
   }
 
