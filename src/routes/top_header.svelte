@@ -58,6 +58,13 @@
     transform-origin: bottom left; /* Set the origin for the wave effect */
     top: 10px;
   }
+  @media (max-width: 768px) {
+    .waving-flag {
+      width: 150px;
+      left: 0px;
+    }
+  }
+
   .waving-flag:hover {
     animation: wave 1.5s infinite ease-in-out;
   }
