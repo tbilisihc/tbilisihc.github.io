@@ -13,7 +13,7 @@
       </p>
     </div>
 
-    <div class="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-4">
+    <div class="mt-12 flex flex-row flex-wrap gap-6 justify-center">
       <Link
         link="https://www.facebook.com/tbilisihc"
         logo="https://cdn.simpleicons.org/facebook/grey"

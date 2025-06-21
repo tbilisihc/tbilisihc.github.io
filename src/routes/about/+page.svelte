@@ -49,7 +49,6 @@
 </svelte:head>
 
 <main>
-  <!-- Hero Section -->
   <section class="hero-bg text-white py-20 md:py-32">
     <div class="container mx-auto px-6 text-center">
       <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
@@ -64,13 +63,12 @@
       </p>
       <a
         href="#join"
-        class="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-gray-100"
+        class="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-110 hover:bg-gray-100 hover:shadow-2xl active:scale-95 active:brightness-90"
         >Get Involved</a
       >
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto text-center">
@@ -98,7 +96,6 @@
     </div>
   </section>
 
-  <!-- Mission Section -->
   <section id="mission" class="py-16 md:py-24 bg-gray-50">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
@@ -155,7 +152,6 @@
     </div>
   </section>
 
-  <!-- What We Do Section -->
   <section id="events" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
       <h2
@@ -222,7 +218,6 @@
     </div>
   </section>
 
-  <!-- Team Section -->
   <section id="team" class="py-16 md:py-24 bg-gray-50">
     <h2
       class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-12 text-center"
@@ -251,7 +246,6 @@
     </div>
   </section>
 
-  <!-- Sponsors Section -->
   <section id="sponsors" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
@@ -287,7 +281,6 @@
     </div>
   </section>
 
-  <!-- Final CTA Section -->
   <section id="join" class="hero-bg">
     <div class="container mx-auto px-6 py-16 md:py-24 text-center text-white">
       <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
@@ -301,8 +294,8 @@
         and have fun, Tbilisi Hack Club is the place for you.
       </p>
       <a
-        href="#about"
-        class="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-gray-100;"
+        href="mailto:tbilisihc@yahoo.com"
+        class="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-110 hover:bg-gray-100 hover:shadow-2xl active:scale-95 active:brightness-90"
         >Learn More</a
       >
     </div>
