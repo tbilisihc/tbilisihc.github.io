@@ -1,4 +1,3 @@
-<!-- +page.svelte -->
 <script lang="js">
   // Sponsors data for the new section
   let sponsors = [
@@ -15,7 +14,6 @@
   ];
 </script>
 
-<!-- Global fonts and base styles for the page -->
 <svelte:head>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,7 +49,6 @@
 
 <div class="page-wrapper">
   <main>
-    <!-- Hero Section -->
     <section class="hero-bg text-white py-20 md:py-32 overflow-hidden">
       <div class="container mx-auto px-6 text-center animated-section">
         <h2
@@ -68,7 +65,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-16 md:py-24 bg-[#f8f9fa] text-gray-800">
       <div
         class="container mx-auto px-6 animated-section"
@@ -88,7 +84,6 @@
       </div>
     </section>
 
-    <!-- Events Section -->
     <section id="events" class="py-16 md:py-24">
       <div
         class="container mx-auto px-6 animated-section"
@@ -100,7 +95,6 @@
           What's Happening?
         </h3>
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Event Card 1 -->
           <div class="event-card">
             <div class="icon-wrapper bg-blue-100 text-blue-500">
               <svg
@@ -123,7 +117,6 @@
               from web dev to AI.
             </p>
           </div>
-          <!-- Event Card 2 -->
           <div class="event-card">
             <div class="icon-wrapper bg-green-100 text-green-500">
               <svg
@@ -146,7 +139,6 @@
               collaborators for new projects.
             </p>
           </div>
-          <!-- Event Card 3 -->
           <div class="event-card">
             <div class="icon-wrapper bg-yellow-100 text-yellow-500">
               <svg
@@ -173,7 +165,6 @@
       </div>
     </section>
 
-    <!-- Supporters Section -- THIS IS THE FIX -->
     <section id="sponsors" class="py-16 md:py-24 bg-[#f8f9fa] text-gray-800">
       <div
         class="container mx-auto px-6 animated-section"
@@ -187,7 +178,7 @@
         <div
           class="flex justify-center items-center gap-x-12 gap-y-8 flex-wrap"
         >
-          {#each sponsors as sponsor}
+          {#each sponsors as sponsor (sponsor.name)}
             <a
               href={sponsor.url}
               target="_blank"
@@ -217,7 +208,6 @@
 
 <style>
   .hero-bg {
-    /* Kept your official gradient */
     background: linear-gradient(
       45deg,
       rgb(10, 74, 89) 0%,
@@ -236,8 +226,7 @@
     );
     position: relative;
   }
-
-  /* Added a subtle texture overlay to the hero */
+  
   .hero-bg::before {
     content: "";
     position: absolute;
