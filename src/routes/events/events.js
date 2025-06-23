@@ -25,7 +25,7 @@ export let Event_list = [
             Name: "Web Development with React",
             Date: "Wednesday, October 1, 2025",
             Description: `<p>Explore the world of web development using React, a popular JavaScript library for building user interfaces.</p>`,
-            Image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHR_P-7OxbDx2-EpUFbKc24Ee2jKJYms_gUw&s",
+            Image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJbd6sk7zjsfY8mwVucWTooKzm3j4yV6RkCw&s",
             BigDescription: `<p>React is a powerful library for building interactive user interfaces. In this event, you will learn how to create components, manage state, and handle events in React applications.</p>
             <p>This event is ideal for those who have some basic knowledge of JavaScript and want to dive into modern web development practices.</p>`,
             Slug: "web-development-with-react",
