@@ -1,4 +1,5 @@
-<script>
+<!-- +page.svelte -->
+<script lang="js">
   // Sponsors data for the new section
   let sponsors = [
     {
@@ -172,7 +173,7 @@
       </div>
     </section>
 
-    <!-- Supporters Section -->
+    <!-- Supporters Section -- THIS IS THE FIX -->
     <section id="sponsors" class="py-16 md:py-24 bg-[#f8f9fa] text-gray-800">
       <div
         class="container mx-auto px-6 animated-section"
