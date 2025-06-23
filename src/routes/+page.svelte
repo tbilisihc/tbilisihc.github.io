@@ -178,7 +178,7 @@
         <div
           class="flex justify-center items-center gap-x-12 gap-y-8 flex-wrap"
         >
-          {#each sponsors as sponsor (sponsor.name)}
+          {#each sponsors as sponsor}
             <a
               href={sponsor.url}
               target="_blank"
