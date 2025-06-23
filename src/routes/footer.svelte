@@ -20,11 +20,6 @@
         text=""
       />
       <Link
-        link="mailto:tbilisihc@yahoo.com"
-        logo="https://cdn.simpleicons.org/gmail/grey"
-        text=""
-      />
-      <Link
         link="https://t.me/tbilisihc"
         logo="https://cdn.simpleicons.org/telegram/grey"
       />
