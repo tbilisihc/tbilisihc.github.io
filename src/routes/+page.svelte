@@ -179,20 +179,24 @@
           class="flex justify-center items-center gap-x-12 gap-y-8 flex-wrap"
         >
           {#each sponsors as sponsor}
-            <a
-              href={sponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="sponsor-link"
+          <a
+            href={sponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-center transition-transform duration-300 hover:scale-110 group"
+          >
+            <img
+              src={sponsor.logo}
+              alt={sponsor.name}
+              class="rounded-full h-24 w-24 sm:h-32 sm:w-32 mb-3 shadow-lg mx-auto object-cover border-4 border-white group-hover:border-blue-300 transition-colors"
+            />
+            <p
+              class="font-bold text-gray-700 group-hover:text-blue-600 transition-colors"
             >
-              <img
-                src={sponsor.logo}
-                alt="{sponsor.name} Logo"
-                class="h-20 w-20 rounded-full object-cover shadow-md"
-              />
-              <span class="mt-3 font-semibold">{sponsor.name}</span>
-            </a>
-          {/each}
+              {sponsor.name}
+            </p>
+          </a>
+        {/each}
         </div>
         <div class="text-center mt-12">
           <a
