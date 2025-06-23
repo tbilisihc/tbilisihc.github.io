@@ -274,7 +274,7 @@
         {/each}
       </div>
       <div class="text-center mt-12">
-        <a href="/sponsor" class="text-blue-600 hover:text-blue-800 underline"
+        <a href="/sponsor" class="text-black-600 hover:text-blue-800 underline"
           >Want to sponsor us?</a
         >
       </div>
