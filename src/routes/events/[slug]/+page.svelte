@@ -91,7 +91,6 @@
     height: 100%;
     max-width: 900px;
     margin: 0 auto;
-    margin-bottom: 100px;
     padding: 2rem;
   }
 
@@ -122,7 +121,7 @@
   /* Hero banner for the image */
   .event-banner {
     width: 100%;
-    height: 400px;
+    height: 100%;
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 2.5rem;
@@ -135,7 +134,7 @@
   .event-banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
   }
 
   /* Wrapper for text content */
@@ -189,5 +188,11 @@
   .not-found-container h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .event-banner img {
+      object-fit: scale-down;
+    }
   }
 </style>
