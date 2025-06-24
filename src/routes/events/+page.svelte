@@ -178,13 +178,13 @@
   .image-link {
     display: block;
     height: 200px;
-    background-color: #e5e7eb;
   }
 
   .main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
+    object-position: center;
     transition: transform 0.3s ease;
   }
 
