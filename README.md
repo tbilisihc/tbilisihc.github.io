@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/tbilisihc/tbilisihc.github.io">
-    <img src="https://tbilisi.hackclub.com/assets/assets/banners/new-banner.png" alt="Banner"  height="200">
+    <img src="https://tbilisi.hackclub.com/assets/assets/banners/banner_fresh.png" alt="Banner"  height="200">
   </a>
 
   <h3 align="center">Official tbilisihc website</h3>
