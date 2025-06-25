@@ -89,7 +89,7 @@
                 // Redirect after a short delay so the user can see the message
                 setTimeout(() => {
                     location.href = "/";
-                }, 3000);
+                }, 2000);
             });
         }
     });
