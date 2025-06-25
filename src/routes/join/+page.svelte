@@ -22,9 +22,6 @@
         const name = nameInput ? nameInput.value : "";
         const email = emailInput ? emailInput.value : "";
         const phone = phoneInput ? phoneInput.value : "";
-
-        // --- Backend logic is preserved as requested ---
-
         const contents = `New signup \n Name: ${name}\n Email: ${email}\n Phone: ${phone}`;
         const vercelWebhookUrl =
           "https://secure-discord-webhook.vercel.app/api/webhook";
