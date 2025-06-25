@@ -10,13 +10,13 @@
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         const nameInput = document.getElementById(
-          "name"
+          "name",
         ) as HTMLInputElement | null;
         const emailInput = document.getElementById(
-          "email"
+          "email",
         ) as HTMLInputElement | null;
         const phoneInput = document.getElementById(
-          "phone-number"
+          "phone-number",
         ) as HTMLInputElement | null;
 
         const name = nameInput ? nameInput.value : "";
@@ -35,7 +35,7 @@
             recipient: email,
             subject: `Hi, ${name}!`,
             message:
-              "This is an automated email from Tbilisi Hack Club! \n\n We have received your request and will email you ourselves soon! \n Thanks for signing up!",
+              "This is an automated email from Tbilisi Hack Club! \n\n We have received your join request and will email you ourselves soon! \n\n While you wait, you may check out our social media accounts: \n https://facebook.com/tbilisihc \n https://youtube.com/tbilisihc \n https://t.me/tbilisihc \n https://x.com/tbilisi_hc.\n\n Have a nice day! \n Best regards, \n Tbilisi Hack Club Administration",
           };
           try {
             const response = await fetch(apiUrl, {
@@ -46,14 +46,14 @@
             if (!response.ok) {
               const errorData = await response.json();
               throw new Error(
-                `HTTP error! Status: ${response.status} - ${JSON.stringify(errorData)}`
+                `HTTP error! Status: ${response.status} - ${JSON.stringify(errorData)}`,
               );
             }
             console.log("Success! Welcome email request sent.");
           } catch (error) {
             console.error(
               "An error occurred while sending the email request:",
-              error
+              error,
             );
           }
         }
@@ -71,7 +71,7 @@
               console.error(
                 "Error sending webhook:",
                 response.status,
-                response.statusText
+                response.statusText,
               );
             }
           } catch (error) {
