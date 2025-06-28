@@ -115,4 +115,4 @@ You can also open an issue with the "bug" or "enhancement" tag.
 
 ## 📄 License
 
-This project is distributed under the MIT License. See `LICENSE` for more information.
+This project is distributed under the The Unlicense License. See `LICENSE` for more information.
