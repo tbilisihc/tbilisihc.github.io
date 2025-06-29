@@ -1,5 +1,5 @@
 <script>
-    import Link from "../link.svelte";
+    import Link from "$lib/components/link.svelte";
 </script>
 
 <footer class="bg-gradient-to-br from-slate-900 to-slate-800 text-white">

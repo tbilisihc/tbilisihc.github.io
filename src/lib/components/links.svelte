@@ -1,6 +1,6 @@
 <script>
     import Link from "./link.svelte";
-    import LinkMob from "./link Mob.svelte";
+    import LinkMob from "./linkMob.svelte";
 </script>
 
 <div id="yes">
