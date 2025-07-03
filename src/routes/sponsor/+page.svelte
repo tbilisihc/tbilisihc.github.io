@@ -85,6 +85,10 @@
     });
 </script>
 
+<svelte:head>
+    <title>Sponsor us | Tbilisi Hack Club</title>
+</svelte:head>
+
 <div class="page-wrapper">
     <canvas bind:this={canvas} id="background-canvas"></canvas>
     <main>
