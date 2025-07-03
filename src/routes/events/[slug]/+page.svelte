@@ -2,7 +2,7 @@
     import { page } from "$app/stores";
     import { derived } from "svelte/store";
     import ArrowLeft from "lucide-svelte/icons/arrow-left";
-    import { Event_list } from "../events.js";
+    import { Event_list } from "$lib/arrays/events.js";
 
     // Get the slug from the URL params and find the corresponding event
     const event = derived(page, ($page) => {
