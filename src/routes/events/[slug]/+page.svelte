@@ -2,12 +2,12 @@
     import { page } from "$app/stores";
     import { derived } from "svelte/store";
     import ArrowLeft from "lucide-svelte/icons/arrow-left";
-    import { Event_list } from "$lib/arrays/events.js";
+    import { Events } from "$lib/arrays/events.js";
 
     // Get the slug from the URL params and find the corresponding event
     const event = derived(page, ($page) => {
         const slug = $page.params.slug;
-        return Event_list.find((e) => e.Slug === slug);
+        return Events.find((e) => e.Slug === slug);
     });
 </script>
 
@@ -20,33 +20,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Poppins:wght@400;700;800;900&display=swap"
         rel="stylesheet"
     />
-    <style>
-        @import "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
-        body {
-            font-family: "Inter", sans-serif;
-            background-color: #f8f9fa; /* Light grey background */
-            color: #1f2937;
-        }
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        .font-heading {
-            font-family: "Poppins", sans-serif;
-        }
-        @keyframes floatIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
 </svelte:head>
 
 <div class="page-container">
@@ -87,9 +60,33 @@
 </div>
 
 <style>
+    body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f9fa; /* Light grey background */
+        color: #1f2937;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .font-heading {
+        font-family: "Poppins", sans-serif;
+    }
+    @keyframes floatIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
     .page-container {
         width: 100%;
-        height: 100%;
+
         max-width: 900px;
         margin: 0 auto;
         padding: 2rem;
