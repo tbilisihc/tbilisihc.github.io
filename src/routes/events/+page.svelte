@@ -1,5 +1,5 @@
 <script lang="js">
-    import { Event_list } from "./events.js";
+    import { Event_list } from "$lib/arrays/events.js";
 
     const upcomingEvents = Event_list.filter((event) => !event.Past);
     const pastEvents = Event_list.filter((event) => event.Past);
