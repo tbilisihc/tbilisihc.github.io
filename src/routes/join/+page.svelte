@@ -63,31 +63,58 @@
             }
 
             // 2. Function to send the automated welcome email
-            async function sendEmailRequest(email: string, name: string) {
+            /**
+             * Sends a pre-formatted welcome email using the generic email API.
+             * @param {string} email The recipient's email address.
+             * @param {string} name The recipient's name.
+             */
+            async function sendWelcomeEmail(email, name) {
                 const apiUrl =
                     "https://tbilisihc-auto-email.vercel.app/api/welcome";
+
+                // 1. Create the subject and message body content here in the frontend.
+                // The Go backend will wrap this message with the header and footer.
+                const subject = `Welcome to Tbilisi Hack Club, ${name}!`;
+                const messageBody = `
+                    <h1>Hi, ${name}!</h1>
+                    <p>Welcome to <strong>Tbilisi Hack Club</strong>! We've received your request to join and we're thrilled to have you on board. We will be in touch personally very soon.</p>
+                    <p>In the meantime, feel free to check out our social media channels to see what we're up to:</p>
+                    <div style="margin: 20px 0;">
+                        <a href="https://t.me/tbilisihc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #ec3750; font-weight: bold;">Telegram</a> &bull;
+                        <a href="https://x.com/tbilisi_hc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #ec3750; font-weight: bold;">X (Twitter)</a> &bull;
+                        <a href="https://facebook.com/tbilisihc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #ec3750; font-weight: bold;">Facebook</a>
+                    </div>
+                    <p>Have a great day!</p>
+                    <p>Best regards,<br>Tbilisi Hack Club Administration</p>
+                `;
+
+                // 2. Assemble the final payload for the Go backend.
                 const emailData = {
                     recipient: email,
-                    subject: `Hi, ${name}!`,
-                    message:
-                        "This is an automated email from Tbilisi Hack Club! \n\n We have received your join request and will email you ourselves soon! \n\n While you wait, you may check out our social media accounts: \n https://facebook.com/tbilisihc \n https://youtube.com/tbilisihc \n https://t.me/tbilisihc \n https://x.com/tbilisi_hc.\n\n Have a nice day! \n Best regards, \n Tbilisi Hack Club Administration",
+                    subject: subject,
+                    message: messageBody,
                 };
+
+                // 3. Send the POST request.
                 try {
                     const response = await fetch(apiUrl, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(emailData),
                     });
+
                     if (!response.ok) {
                         const errorData = await response.json();
                         throw new Error(
                             `HTTP error! Status: ${response.status} - ${JSON.stringify(errorData)}`,
                         );
                     }
-                    console.log("Success! Welcome email request sent.");
+
+                    const result = await response.json();
+                    console.log("Success! Server responded:", result.message);
                 } catch (error) {
                     console.error(
-                        "An error occurred while sending the email request:",
+                        "An error occurred while sending the welcome email request:",
                         error,
                     );
                 }
@@ -123,7 +150,7 @@
             // Fire off all requests concurrently
             Promise.all([
                 sendSubmissionToNetlify(name, email, phone),
-                sendEmailRequest(email, name),
+                sendWelcomeEmail(email, name),
                 sendDiscordWebhook(discordMessage),
             ]);
 
