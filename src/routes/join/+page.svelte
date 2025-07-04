@@ -80,9 +80,9 @@
                     <p>Welcome to <strong>Tbilisi Hack Club</strong>! We've received your request to join and we're thrilled to have you on board. We will be in touch personally very soon.</p>
                     <p>In the meantime, feel free to check out our social media channels to see what we're up to:</p>
                     <div style="margin: 20px 0;">
-                        <a href="https://t.me/tbilisihc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #ec3750; font-weight: bold;">Telegram</a> &bull;
-                        <a href="https://x.com/tbilisi_hc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #ec3750; font-weight: bold;">X (Twitter)</a> &bull;
-                        <a href="https://facebook.com/tbilisihc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #ec3750; font-weight: bold;">Facebook</a>
+                        <a href="https://t.me/tbilisihc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #1DB7FE; font-weight: bold;">Telegram</a> &bull;
+                        <a href="https://x.com/tbilisi_hc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #1DB7FE; font-weight: bold;">X (Twitter)</a> &bull;
+                        <a href="https://facebook.com/tbilisihc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #1DB7FE; font-weight: bold;">Facebook</a>
                     </div>
                     <p>Have a great day!</p>
                     <p>Best regards,<br>Tbilisi Hack Club Administration</p>
