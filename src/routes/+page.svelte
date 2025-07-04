@@ -1,9 +1,20 @@
 <script lang="js">
-    import sponsors from "$lib/arrays/sponsors.js";
+    // Sponsors data for the new section
+    let sponsors = [
+        {
+            name: "Hack Club",
+            logo: "https://assets.hackclub.com/icon-rounded.png",
+            url: "https://hackclub.com",
+        },
+        {
+            name: "Drew Smirnoff",
+            logo: "https://tbilisi.hackclub.com/drew/avatar.png",
+            url: "https://tbilisi.hackclub.com/drew/",
+        },
+    ];
 </script>
 
 <svelte:head>
-    <title>Home | Tbilisi Hack Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
