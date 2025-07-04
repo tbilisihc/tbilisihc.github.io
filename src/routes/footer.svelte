@@ -1,69 +1,80 @@
 <script>
-    import Link from "$lib/components/link.svelte";
+    import navigation from "$lib/arrays/navigation.js";
 </script>
 
-<footer class="bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-    <div class="mx-auto max-w-4xl px-6 py-16">
-        <div class="text-center">
-            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-                Get in touch
-            </h2>
-            <p class="mt-4 text-lg leading-8 text-slate-300">
-                Connect with us on social media or send us an email.
-            </p>
-        </div>
-
-        <div class="mt-12 flex flex-row flex-wrap gap-6 justify-center">
-            <Link
-                link="https://www.facebook.com/tbilisihc"
-                logo="https://cdn.simpleicons.org/facebook/grey"
-                text=""
-            />
-            <Link
-                link="https://t.me/tbilisihc"
-                logo="https://cdn.simpleicons.org/telegram/grey"
-            />
-            <Link
-                link="https://instagram.com/tbilisihc"
-                logo="https://cdn.simpleicons.org/instagram/grey"
-            />
-            <Link
-                link="https://github.com/tbilisihc"
-                logo="https://cdn.simpleicons.org/github/grey"
-            />
-            <Link
-                link="https://x.com/tbilisi_hc"
-                logo="https://cdn.simpleicons.org/x/grey"
-            />
-        </div>
-
-        <div
-            class="mt-16 border-t border-slate-700 pt-8 flex flex-col items-center justify-between gap-y-4 md:flex-row"
-        >
-            <div
-                class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 md:justify-start"
-            >
+<footer class="bg-slate-900" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div class="space-y-8">
                 <a
-                    href="https://tbilisi.hackclub.com/privacy-policy"
-                    class="text-sm leading-6 text-slate-400 transition-colors duration-300 hover:text-blue-400"
-                    >Privacy Policy</a
+                    href="https://tbilisi.hackclub.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex-shrink-0"
                 >
-                <a
-                    href="https://tbilisi.hackclub.com/terms-and-conditions"
-                    class="text-sm leading-6 text-slate-400 transition-colors duration-300 hover:text-blue-400"
-                    >Terms of Service</a
-                >
+                    <svg
+                        width="150"
+                        height="60"
+                        viewBox="0 0 150 60"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <style>
+                            .logo-text {
+                                font-family: -apple-system, BlinkMacSystemFont,
+                                    "Segoe UI", Roboto, Helvetica, Arial,
+                                    sans-serif, "Apple Color Emoji",
+                                    "Segoe UI Emoji";
+                                font-size: 45px;
+                                font-weight: 500;
+                                fill: white;
+                                text-anchor: middle;
+                                dominant-baseline: central;
+                            }
+                        </style>
+                        <text x="50%" y="50%" class="logo-text">thc</text>
+                    </svg>
+                </a>
+
+                <div class="flex space-x-6 mt-10">
+                    {#each navigation.social as item}
+                        <a
+                            href={item.href}
+                            class="text-slate-400 hover:text-white"
+                        >
+                            <span class="sr-only">{item.name}</span>
+                            {@html item.icon(
+                                'class="h-6 w-6" aria-hidden="true"',
+                            )}
+                        </a>
+                    {/each}
+                </div>
             </div>
 
-            <p class="text-center text-xs leading-5 text-slate-500">
+            <div class="mt-16 md:mt-0">
+                <h3 class="text-sm font-semibold leading-6 text-white">
+                    Tbilisi Hack Club
+                </h3>
+                <ul role="list" class="mt-6 space-y-4">
+                    {#each navigation.about as item}
+                        <li>
+                            <a
+                                href={item.href}
+                                class="text-sm leading-6 text-slate-400 hover:text-white"
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    {/each}
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+            <p class="text-xs leading-5 text-slate-500 text-center">
                 &copy; 2025 Tbilisi Hack Club. All rights reserved.
             </p>
         </div>
     </div>
 </footer>
-
-<style>
-    footer {
-        width: 100%;
-    }
-</style>
