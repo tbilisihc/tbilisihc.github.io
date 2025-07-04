@@ -1,117 +1,140 @@
 <script lang="ts">
     import { onMount } from "svelte";
+
     let showSuccessMessage = false;
+
     onMount(() => {
         const form = document.getElementById("form");
-        if (form) {
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-                const nameInput = document.getElementById(
-                    "name",
-                ) as HTMLInputElement | null;
-                const emailInput = document.getElementById(
-                    "email",
-                ) as HTMLInputElement | null;
-                const phoneInput = document.getElementById(
-                    "phone-number",
-                ) as HTMLInputElement | null;
-                const name = nameInput ? nameInput.value : "";
-                const email = emailInput ? emailInput.value : "";
-                const phone = phoneInput ? phoneInput.value : "";
-                const contents = `New signup \n Name: ${name}\n Email: ${email}\n Phone: ${phone}`;
+        if (!form) return;
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            // --- Get Form Values ---
+            const nameInput = document.getElementById(
+                "name",
+            ) as HTMLInputElement | null;
+            const emailInput = document.getElementById(
+                "email",
+            ) as HTMLInputElement | null;
+            const phoneInput = document.getElementById(
+                "phone-number",
+            ) as HTMLInputElement | null;
+
+            // Ensure the values are strings, even if inputs are not found
+            const name = nameInput?.value ?? "";
+            const email = emailInput?.value ?? "";
+            const phone = phoneInput?.value ?? "";
+
+            // --- Define API Functions ---
+
+            // 1. Function to send submission to your Netlify function
+            async function sendSubmissionToNetlify(
+                name: string,
+                email: string,
+                phone: string,
+            ) {
+                const apiUrl =
+                    "https://submissions-tbilisihc.netlify.app/.netlify/functions/add-submissions";
+                const submissionData = { name, email, phone };
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(submissionData),
+                    });
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(
+                            `HTTP error! Status: ${response.status} - ${JSON.stringify(errorData)}`,
+                        );
+                    }
+                    const responseData = await response.json();
+                    console.log(
+                        "Success! Submission sent to Netlify:",
+                        responseData,
+                    );
+                } catch (error) {
+                    console.error(
+                        "An error occurred while sending the submission to Netlify:",
+                        error,
+                    );
+                }
+            }
+
+            // 2. Function to send the automated welcome email
+            async function sendEmailRequest(email: string, name: string) {
+                const apiUrl =
+                    "https://tbilisihc-auto-email.vercel.app/api/welcome";
+                const emailData = {
+                    recipient: email,
+                    subject: `Hi, ${name}!`,
+                    message:
+                        "This is an automated email from Tbilisi Hack Club! \n\n We have received your join request and will email you ourselves soon! \n\n While you wait, you may check out our social media accounts: \n https://facebook.com/tbilisihc \n https://youtube.com/tbilisihc \n https://t.me/tbilisihc \n https://x.com/tbilisi_hc.\n\n Have a nice day! \n Best regards, \n Tbilisi Hack Club Administration",
+                };
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(emailData),
+                    });
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(
+                            `HTTP error! Status: ${response.status} - ${JSON.stringify(errorData)}`,
+                        );
+                    }
+                    console.log("Success! Welcome email request sent.");
+                } catch (error) {
+                    console.error(
+                        "An error occurred while sending the email request:",
+                        error,
+                    );
+                }
+            }
+
+            // 3. Function to send a notification to Discord
+            async function sendDiscordWebhook(message: string) {
                 const vercelWebhookUrl =
-                    "https://secure-discord-webhook.vercel.app/api/webhook"; // --- Start of backend logic ---
-                async function sendSubmissionToNetlify(
-                    name: string,
-                    email: string,
-                    phone: string,
-                ) {
-                    const apiUrl =
-                        "https://submissions-tbilisihc.netlify.app/.netlify/functions/add-submissions";
-                    const submissionData = { name, email, phone };
-                    try {
-                        const response = await fetch(apiUrl, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify(submissionData),
-                        });
-                        if (!response.ok) {
-                            const errorData = await response.json();
-                            throw new Error(
-                                `HTTP error! Status: ${response.status} - ${JSON.stringify(errorData)}`,
-                            );
-                        }
-                        const responseData = await response.json();
-                        console.log(
-                            "Success! Submission sent to Netlify:",
-                            responseData,
-                        );
-                    } catch (error) {
+                    "https://secure-discord-webhook.vercel.app/api/webhook";
+                try {
+                    const response = await fetch(vercelWebhookUrl, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ content: message }),
+                    });
+                    if (response.ok) {
+                        console.log("Webhook sent successfully.");
+                    } else {
                         console.error(
-                            "An error occurred while sending the submission to Netlify:",
-                            error,
+                            "Error sending webhook:",
+                            response.status,
+                            response.statusText,
                         );
                     }
+                } catch (error) {
+                    console.error("Fetch error:", error);
                 }
-                async function sendEmailRequest(email: string, name: string) {
-                    const apiUrl =
-                        "https://tbilisihc-auto-email.vercel.app/api/welcome";
-                    const emailData = {
-                        recipient: email,
-                        subject: `Hi, ${name}!`,
-                        message:
-                            "This is an automated email from Tbilisi Hack Club! \n\n We have received your join request and will email you ourselves soon! \n\n While you wait, you may check out our social media accounts: \n https://facebook.com/tbilisihc \n https://youtube.com/tbilisihc \n https://t.me/tbilisihc \n https://x.com/tbilisi_hc.\n\n Have a nice day! \n Best regards, \n Tbilisi Hack Club Administration",
-                    };
-                    try {
-                        const response = await fetch(apiUrl, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify(emailData),
-                        });
-                        if (!response.ok) {
-                            const errorData = await response.json();
-                            throw new Error(
-                                `HTTP error! Status: ${response.status} - ${JSON.stringify(errorData)}`,
-                            );
-                        }
-                        console.log("Success! Welcome email request sent.");
-                    } catch (error) {
-                        console.error(
-                            "An error occurred while sending the email request:",
-                            error,
-                        );
-                    }
-                }
-                async function sendDiscordWebhook(message: string) {
-                    try {
-                        const response = await fetch(vercelWebhookUrl, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ content: message }),
-                        });
-                        if (response.ok) {
-                            console.log("Webhook sent successfully.");
-                        } else {
-                            console.error(
-                                "Error sending webhook:",
-                                response.status,
-                                response.statusText,
-                            );
-                        }
-                    } catch (error) {
-                        console.error("Fetch error:", error);
-                    }
-                } // --- End of backend logic ---
-                // Execute the backend calls
-                sendSubmissionToNetlify(name, email, phone); // ✨ New function call
-                sendEmailRequest(email, name);
-                sendDiscordWebhook(contents); // Show a custom success message instead of an alert
-                showSuccessMessage = true;
-                setTimeout(() => {
-                    location.href = "/";
-                }, 2000);
-            });
-        }
+            }
+
+            // --- Execute Calls and Update UI ---
+            const discordMessage = `New signup \n Name: ${name}\n Email: ${email}\n Phone: ${phone}`;
+
+            // Fire off all requests concurrently
+            Promise.all([
+                sendSubmissionToNetlify(name, email, phone),
+                sendEmailRequest(email, name),
+                sendDiscordWebhook(discordMessage),
+            ]);
+
+            // Update UI immediately to give user feedback
+            showSuccessMessage = true;
+
+            // Redirect after a short delay
+            setTimeout(() => {
+                location.href = "/";
+            }, 2000);
+        });
     });
 </script>
 
@@ -151,6 +174,7 @@
         }
     </style>
 </svelte:head>
+
 <div class="join-page-container">
     <div class="form-card animated-section">
         {#if showSuccessMessage}
@@ -186,7 +210,6 @@
                 <div>
                     <label for="email" class="form-label">Email Address</label>
                     <input
-                        _
                         type="email"
                         name="email"
                         id="email"
