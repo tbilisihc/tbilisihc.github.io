@@ -1,8 +1,8 @@
 <script lang="js">
-    import { Event_list } from "./events.js";
+    import { Events } from "$lib/arrays/events.js";
 
-    const upcomingEvents = Event_list.filter((event) => !event.Past);
-    const pastEvents = Event_list.filter((event) => event.Past);
+    const upcomingEvents = Events.filter((event) => !event.Past);
+    const pastEvents = Events.filter((event) => event.Past);
 </script>
 
 <svelte:head>
