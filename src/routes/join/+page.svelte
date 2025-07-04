@@ -1,11 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
-
     let showSuccessMessage = false;
-
     onMount(() => {
         const form = document.getElementById("form");
-
         if (form) {
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
@@ -18,14 +15,44 @@
                 const phoneInput = document.getElementById(
                     "phone-number",
                 ) as HTMLInputElement | null;
-
                 const name = nameInput ? nameInput.value : "";
                 const email = emailInput ? emailInput.value : "";
                 const phone = phoneInput ? phoneInput.value : "";
                 const contents = `New signup \n Name: ${name}\n Email: ${email}\n Phone: ${phone}`;
                 const vercelWebhookUrl =
-                    "https://secure-discord-webhook.vercel.app/api/webhook";
-
+                    "https://secure-discord-webhook.vercel.app/api/webhook"; // --- Start of backend logic ---
+                async function sendSubmissionToNetlify(
+                    name: string,
+                    email: string,
+                    phone: string,
+                ) {
+                    const apiUrl =
+                        "https://submissions-tbilisihc.netlify.app/.netlify/functions/add-submissions";
+                    const submissionData = { name, email, phone };
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(submissionData),
+                        });
+                        if (!response.ok) {
+                            const errorData = await response.json();
+                            throw new Error(
+                                `HTTP error! Status: ${response.status} - ${JSON.stringify(errorData)}`,
+                            );
+                        }
+                        const responseData = await response.json();
+                        console.log(
+                            "Success! Submission sent to Netlify:",
+                            responseData,
+                        );
+                    } catch (error) {
+                        console.error(
+                            "An error occurred while sending the submission to Netlify:",
+                            error,
+                        );
+                    }
+                }
                 async function sendEmailRequest(email: string, name: string) {
                     const apiUrl =
                         "https://tbilisihc-auto-email.vercel.app/api/welcome";
@@ -55,7 +82,6 @@
                         );
                     }
                 }
-
                 async function sendDiscordWebhook(message: string) {
                     try {
                         const response = await fetch(vercelWebhookUrl, {
@@ -75,18 +101,12 @@
                     } catch (error) {
                         console.error("Fetch error:", error);
                     }
-                }
-
-                // --- End of backend logic ---
-
+                } // --- End of backend logic ---
                 // Execute the backend calls
+                sendSubmissionToNetlify(name, email, phone); // ✨ New function call
                 sendEmailRequest(email, name);
-                sendDiscordWebhook(contents);
-
-                // Show a custom success message instead of an alert
+                sendDiscordWebhook(contents); // Show a custom success message instead of an alert
                 showSuccessMessage = true;
-
-                // Redirect after a short delay so the user can see the message
                 setTimeout(() => {
                     location.href = "/";
                 }, 2000);
@@ -131,7 +151,6 @@
         }
     </style>
 </svelte:head>
-
 <div class="join-page-container">
     <div class="form-card animated-section">
         {#if showSuccessMessage}
@@ -167,6 +186,7 @@
                 <div>
                     <label for="email" class="form-label">Email Address</label>
                     <input
+                        _
                         type="email"
                         name="email"
                         id="email"
@@ -188,7 +208,6 @@
                         required
                     />
                 </div>
-
                 <div class="flex items-start pt-2">
                     <div class="flex items-center h-5">
                         <input
@@ -210,7 +229,6 @@
                         >
                     </div>
                 </div>
-
                 <button type="submit" class="submit-button">Sign Up</button>
             </form>
         {/if}
@@ -225,12 +243,10 @@
         min-height: 100vh;
         padding: 2rem;
     }
-
     .animated-section {
         opacity: 0;
         animation: floatIn 0.8s ease-out forwards;
     }
-
     .form-card {
         width: 100%;
         max-width: 500px;
@@ -241,37 +257,30 @@
             0 10px 15px -3px rgba(0, 0, 0, 0.1),
             0 4px 6px -4px rgba(0, 0, 0, 0.1);
     }
-
     .form-header {
         text-align: center;
         margin-bottom: 2rem;
     }
-
     .page-title {
         font-size: 2.25rem;
         font-weight: 800;
         color: #111827;
     }
-
     .page-subtitle {
         color: #4b5563;
         margin-top: 0.5rem;
     }
-
     .form-label {
         @apply block mb-2 text-sm font-medium text-gray-700;
     }
-
     .form-input {
         @apply block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base;
         @apply focus:ring-blue-500 focus:border-blue-500 transition-shadow;
     }
-
     .submit-button {
         @apply w-full text-white bg-blue-600 font-medium rounded-lg text-sm px-5 py-3 text-center transition-colors;
         @apply hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300;
     }
-
     .success-message {
         text-align: center;
         padding: 2rem 0;
