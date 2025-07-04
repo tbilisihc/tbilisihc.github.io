@@ -1,28 +1,21 @@
 <script>
     import "../app.css";
-    import Footer from "$lib/components/Footer.svelte";
-    import Header from "$lib/components/Header.svelte";
+    import Footer from "./footer.svelte";
+    import Header from "./top_header.svelte";
 </script>
 
-<div class="layout-container">
-    <Header />
+<Header></Header>
 
-    <main>
-        <slot />
-    </main>
+<main>
+    <slot></slot>
+</main>
 
-    <Footer />
-</div>
+<Footer></Footer>
 
 <style>
-    /* These styles turn the container into a full-height flex column */
-    .layout-container {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
     main {
-        flex-grow: 1; /* This will now correctly push the footer down */
+        flex-grow: 1; /* This is the magic part! */
+        /* It tells the main content area to grow and take up all available */
+        /* space, pushing the footer to the bottom. */
     }
 </style>
