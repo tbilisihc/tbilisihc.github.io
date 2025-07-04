@@ -6,7 +6,7 @@
     <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div class="md:grid md:grid-cols-2 md:gap-8">
-            <div class="space-y-8">
+            <div class="flex flex-col items-center space-y-8">
                 <a
                     href="https://tbilisi.hackclub.com"
                     target="_blank"
@@ -37,7 +37,7 @@
                     </svg>
                 </a>
 
-                <div class="flex space-x-6 mt-10">
+                <div class="mt-10 grid grid-cols-3 gap-x-10 gap-y-4 w-min">
                     {#each navigation.social as item}
                         <a
                             href={item.href}
@@ -56,7 +56,7 @@
                 <h3 class="text-sm font-semibold leading-6 text-white">
                     Tbilisi Hack Club
                 </h3>
-                <ul role="list" class="mt-6 space-y-4">
+                <ul role="list" class="mt-6 grid grid-cols-2 gap-y-4 gap-x-8">
                     {#each navigation.about as item}
                         <li>
                             <a
@@ -73,7 +73,7 @@
 
         <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
             <p class="text-xs leading-5 text-slate-500 text-center">
-                &copy; 2025 Tbilisi Hack Club. All rights reserved.
+                &copy; {new Date().getFullYear()} Tbilisi Hack Club. All rights reserved.
             </p>
         </div>
     </div>

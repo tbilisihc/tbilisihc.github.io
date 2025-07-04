@@ -6,6 +6,8 @@ const navigation = {
     // { name: "Get Involved", href: "" },
     { name: "Code of Conduct", href: "/code-of-conduct" },
     { name: "Contact", href: "/contact" },
+    { name: "Sponsor Us", href: "/sponsor" },
+    { name: "Terms and Conditions", href: "/terms-and-conditions" },
   ],
   social: [
     {
