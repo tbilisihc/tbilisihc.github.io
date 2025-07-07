@@ -1,14 +1,19 @@
 const navigation = {
   about: [
-    { name: "About Us", href: "/about" },
-    // { name: "Our Projects", href: "/" },
-    { name: "Events", href: "/events" },
-    // { name: "Get Involved", href: "" },
-    { name: "Code of Conduct", href: "/code-of-conduct" },
-    { name: "Contact", href: "/contact" },
-    { name: "Sponsor Us", href: "/sponsor" },
-    { name: "Terms and Conditions", href: "/terms-and-conditions" },
+    { name: "navigation.about", href: "/about" },
+    { name: "navigation.events", href: "/events" },
+    { name: "navigation.code_of_conduct", href: "/code-of-conduct" },
+    { name: "navigation.contact", href: "/contact" },
+    { name: "navigation.sponsor", href: "/sponsor" },
+    { name: "navigation.terms", href: "/terms-and-conditions" },
   ],
+  header: [
+    { name: "navigation.about", href: "/about" },
+    { name: "navigation.events", href: "/events" },
+    { name: "navigation.join", href: "/join" }
+  ],
+
+
   social: [
     {
       name: "Instagram",

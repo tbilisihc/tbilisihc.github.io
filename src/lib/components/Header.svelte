@@ -1,5 +1,8 @@
 <script>
     import { slide } from "svelte/transition";
+    import navigation from "$lib/arrays/navigation.js";
+    import { _ } from "svelte-i18n";
+    import LanguageSelector from "./LanguageSelector.svelte";
     let isOpen = false;
 </script>
 
@@ -53,9 +56,12 @@
         </button>
 
         <div class="hidden md:flex items-center space-x-8">
-            <a href="/about" class="nav-link">About</a>
-            <a href="/events" class="nav-link">Events</a>
-            <a href="/join" class="join-btn">Join</a>
+            {#each navigation.header as item}
+                <a href={item.href} class="text-gray-600 hover:text-gray-800">
+                    {$_(`${item.name}`)}
+                </a>
+            {/each}
+            <LanguageSelector />
         </div>
     </nav>
 

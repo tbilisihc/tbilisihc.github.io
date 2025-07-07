@@ -2,6 +2,16 @@
     import "../app.css";
     import Footer from "$lib/components/Footer.svelte";
     import Header from "$lib/components/Header.svelte";
+    import { browser } from "$app/environment";
+    import "$lib/i18n"; // Import to initialize
+    import { locale, waitLocale } from "svelte-i18n";
+
+    export const load = async () => {
+        if (browser) {
+            locale.set(window.navigator.language);
+        }
+        await waitLocale();
+    };
 </script>
 
 <Header></Header>
