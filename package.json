@@ -53,6 +53,7 @@
 		"gh-pages": "^6.3.0",
 		"lucide-svelte": "^0.518.0",
 		"node-fetch": "^3.3.2",
+		"svelte-i18n": "^4.0.1",
 		"svelte-spa-router": "^4.0.1"
 	}
 }

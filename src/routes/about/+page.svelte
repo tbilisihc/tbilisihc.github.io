@@ -1,5 +1,6 @@
 <script lang="js">
     import team from "$lib/arrays/team.js";
+    import { _ } from "svelte-i18n";
 
     // Fallback image handler
     function handleImgError(event, name) {
@@ -47,24 +48,19 @@
 </svelte:head>
 
 <main class="page-wrapper">
-    <!-- Hero Section -->
     <section class=" text-black py-20 md:py-32 overflow-hidden">
         <div class="container mx-auto px-6 text-center animated-section">
             <h1
                 class="text-4xl md:text-6xl font-bold mb-4 leading-tight font-heading"
             >
-                Welcome to Tbilisi Hack Club
+                {$_("about_page.hero.title")}
             </h1>
             <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-500">
-                In a city buzzing with ancient history and a vibrant, emerging
-                tech scene, a new chapter is unfolding. Welcome to a space for
-                young creators, coders, and innovators to come together, learn,
-                and build amazing things.
+                {$_("about_page.hero.description")}
             </p>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-16 md:py-24 bg-white">
         <div
             class="container mx-auto px-6 animated-section"
@@ -72,145 +68,133 @@
         >
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="section-title text-gray-800">
-                    What is a <span class="text-blue-600">Hack Club?</span>
+                    {@html $_("about_page.what_is.title")}
                 </h2>
                 <p class="section-paragraph">
-                    Forget the stereotypes of stuffy classrooms and rigid
-                    curriculums. A Hack Club is a dynamic, hands-on environment
-                    where you learn by doing. It's a place to tinker, to
-                    experiment, to break things and then build them back better.
-                    Here, you'll find a supportive community of peers who share
-                    your passion for technology.
+                    {$_("about_page.what_is.description_1")}
                 </p>
                 <p class="section-paragraph">
-                    Our club is for <strong class="text-gray-900"
-                        >everyone</strong
-                    >, from absolute beginners to seasoned young developers. We
-                    believe that the most powerful learning happens when you're
-                    driven by curiosity. We're part of a worldwide network of
-                    student-led coding clubs, all fueled by the same philosophy:
-                    <strong class="text-gray-900"
-                        >learning to code is like gaining a superpower.</strong
-                    >
+                    {@html $_("about_page.what_is.description_2")}
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
     <section id="mission" class="py-16 md:py-24 bg-gray-50">
         <div
             class="container mx-auto px-6 text-center animated-section"
             style="animation-delay: 400ms;"
         >
             <h2 class="section-title text-gray-800">
-                Our Mission: Empowering Georgia's Next Innovators 💡
+                {$_("about_page.mission.title")}
             </h2>
             <p class="section-paragraph max-w-4xl mx-auto mb-12">
-                Tbilisi is a city on the rise, and we see incredible potential
-                within our city's youth. Our mission is to provide a platform
-                for you to develop the skills, mindset, and network to thrive in
-                this exciting landscape.
+                {$_("about_page.mission.description")}
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
                 <div class="info-card">
-                    <h3 class="card-title">Culture of Creation</h3>
+                    <h3 class="card-title">
+                        {$_("about_page.mission.cards.creation.title")}
+                    </h3>
                     <p class="card-text">
-                        Foster a generation of makers unafraid to experiment and
-                        bring ideas to life.
+                        {$_("about_page.mission.cards.creation.text")}
                     </p>
                 </div>
                 <div class="info-card">
-                    <h3 class="card-title">Inclusive Space</h3>
+                    <h3 class="card-title">
+                        {$_("about_page.mission.cards.inclusive.title")}
+                    </h3>
                     <p class="card-text">
-                        Find your tribe, collaborate on projects, and learn from
-                        one another.
+                        {$_("about_page.mission.cards.inclusive.text")}
                     </p>
                 </div>
                 <div class="info-card">
-                    <h3 class="card-title">Global Connection</h3>
+                    <h3 class="card-title">
+                        {$_("about_page.mission.cards.connection.title")}
+                    </h3>
                     <p class="card-text">
-                        Access a worldwide community of young innovators and
-                        resources.
+                        {$_("about_page.mission.cards.connection.text")}
                     </p>
                 </div>
                 <div class="info-card">
-                    <h3 class="card-title">21st-Century Skills</h3>
+                    <h3 class="card-title">
+                        {$_("about_page.mission.cards.skills.title")}
+                    </h3>
                     <p class="card-text">
-                        Learn problem-solving, critical thinking, teamwork, and
-                        more.
+                        {$_("about_page.mission.cards.skills.text")}
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What We Do Section -->
     <section id="events" class="py-16 md:py-24 bg-white">
         <div
             class="container mx-auto px-6 animated-section"
             style="animation-delay: 600ms;"
         >
             <h2 class="section-title text-gray-800 text-center">
-                What We Do: It's All About <span class="text-blue-600"
-                    >Building</span
-                > 🛠️
+                {@html $_("about_page.what_we_do.title")}
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
                 <div class="info-card bg-gray-50">
-                    <h3 class="card-title">Workshops</h3>
+                    <h3 class="card-title">
+                        {$_("about_page.what_we_do.cards.workshops.title")}
+                    </h3>
                     <p class="card-text mt-2">
-                        Dive into practical, hands-on workshops on web dev,
-                        Python game creation, hardware design, and more.
+                        {$_("about_page.what_we_do.cards.workshops.text")}
                     </p>
                 </div>
                 <div class="info-card bg-gray-50">
-                    <h3 class="card-title">Project-Based Learning</h3>
+                    <h3 class="card-title">
+                        {$_("about_page.what_we_do.cards.pbl.title")}
+                    </h3>
                     <p class="card-text mt-2">
-                        Got an idea? We provide the freedom and support to work
-                        on projects you're passionate about.
+                        {$_("about_page.what_we_do.cards.pbl.text")}
                     </p>
                 </div>
                 <div class="info-card bg-gray-50">
-                    <h3 class="card-title">Hackathons & Events</h3>
+                    <h3 class="card-title">
+                        {$_("about_page.what_we_do.cards.hackathons.title")}
+                    </h3>
                     <p class="card-text mt-2">
-                        Test your skills and create amazing things in local and
-                        global competitions.
+                        {$_("about_page.what_we_do.cards.hackathons.text")}
                     </p>
                 </div>
                 <div class="info-card bg-gray-50">
-                    <h3 class="card-title">Guest Speakers</h3>
+                    <h3 class="card-title">
+                        {$_("about_page.what_we_do.cards.speakers.title")}
+                    </h3>
                     <p class="card-text mt-2">
-                        Connect with professionals from Tbilisi's tech scene who
-                        will share their experiences.
+                        {$_("about_page.what_we_do.cards.speakers.text")}
                     </p>
                 </div>
                 <div class="info-card bg-gray-50">
-                    <h3 class="card-title">Global Collaboration</h3>
+                    <h3 class="card-title">
+                        {$_("about_page.what_we_do.cards.collaboration.title")}
+                    </h3>
                     <p class="card-text mt-2">
-                        Work on projects with members from other Hack Clubs
-                        around the world.
+                        {$_("about_page.what_we_do.cards.collaboration.text")}
                     </p>
                 </div>
                 <div
                     class="info-card bg-blue-500 text-white flex items-center justify-center"
                 >
                     <p class="font-bold text-xl text-center">
-                        Our meetings are hands-on, not lectures!
+                        {$_("about_page.what_we_do.note")}
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
     <section id="team" class="py-16 md:py-24 bg-gray-50">
         <div
             class="container mx-auto px-6 animated-section"
             style="animation-delay: 800ms;"
         >
             <h2 class="section-title text-gray-800 text-center">
-                Get to Know Our Team
+                {$_("about_page.team.title")}
             </h2>
             <div
                 class="flex flex-row flex-wrap justify-center items-center gap-x-12 gap-y-8 mt-12"
@@ -239,24 +223,20 @@
         </div>
     </section>
 
-    <!-- Join/CTA Section -->
     <section id="join" class="hero-bg">
         <div
             class="container mx-auto px-6 py-16 md:py-24 text-center text-white animated-section"
             style="animation-delay: 1000ms;"
         >
             <h2 class="text-3xl md:text-4xl font-extrabold mb-4 font-heading">
-                The Future Is In Your Hands
+                {$_("about_page.join.title")}
             </h2>
             <p class="section-paragraph max-w-3xl mx-auto text-gray-200 mb-8">
-                Tbilisi has a long and proud history of ingenuity and
-                creativity. As we embrace the digital age, the spirit of
-                innovation continues to thrive. Whether you dream of building
-                the next great Georgian startup, developing cutting-edge
-                technology, or simply want to learn a new skill and have fun,
-                Tbilisi Hack Club is the place for you.
+                {$_("about_page.join.description")}
             </p>
-            <a href="/join" class="cta-button">Join Us</a>
+            <a href="/join" class="cta-button"
+                >{$_("about_page.join.cta_button")}</a
+            >
         </div>
     </section>
 </main>

@@ -1,67 +1,37 @@
 <script>
+    import { _ } from "svelte-i18n";
     import navigation from "$lib/arrays/navigation.js";
 </script>
 
-<footer class="bg-slate-900" aria-labelledby="footer-heading">
-    <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-            <div class="flex flex-col items-center space-y-8">
-                <a
-                    href="https://tbilisi.hackclub.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex-shrink-0"
-                >
-                    <svg
-                        width="150"
-                        height="60"
-                        viewBox="0 0 150 60"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <style>
-                            .logo-text {
-                                font-family: -apple-system, BlinkMacSystemFont,
-                                    "Segoe UI", Roboto, Helvetica, Arial,
-                                    sans-serif, "Apple Color Emoji",
-                                    "Segoe UI Emoji";
-                                font-size: 45px;
-                                font-weight: 500;
-                                fill: white;
-                                text-anchor: middle;
-                                dominant-baseline: central;
-                            }
-                        </style>
-                        <text x="50%" y="50%" class="logo-text">thc</text>
-                    </svg>
-                </a>
-
-                <div class="mt-10 grid grid-cols-3 gap-x-10 gap-y-4 w-min">
-                    {#each navigation.social as item}
-                        <a
-                            href={item.href}
-                            class="text-slate-400 hover:text-white"
-                        >
-                            <span class="sr-only">{item.name}</span>
-                            {@html item.icon(
-                                'class="h-6 w-6" aria-hidden="true"',
-                            )}
-                        </a>
-                    {/each}
-                </div>
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-wrap">
+            <div class="mt-20 w-full md:w-1/2">
+                <h3 class="text-lg font-bold">{$_("navigation.about")}</h3>
+                <p class="mt-2 max-w-md">&nbsp; {$_(`footer.about`)}</p>
             </div>
-
-            <div class="mt-16 md:mt-0">
-                <h3 class="text-sm font-semibold leading-6 text-white">
-                    Tbilisi Hack Club
-                </h3>
-                <ul role="list" class="mt-6 grid grid-cols-2 gap-y-4 gap-x-8">
+            <div class="mt-20 w-full md:w-1/4">
+                <h3 class="text-lg font-bold">{$_("navigation.links")}</h3>
+                <ul class="mt-2 space-y-2">
                     {#each navigation.about as item}
+                        <li>
+                            <a href={item.href} class="hover:underline">
+                                {$_(`${item.name}`)}
+                            </a>
+                        </li>
+                    {/each}
+                </ul>
+            </div>
+            <div class="mt-20 w-full md:w-1/4">
+                <h3 class="text-lg font-bold">Social</h3>
+                <ul class="mt-2 space-y-2">
+                    {#each navigation.social as item}
                         <li>
                             <a
                                 href={item.href}
-                                class="text-sm leading-6 text-slate-400 hover:text-white"
+                                class="hover:underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 {item.name}
                             </a>
@@ -70,11 +40,20 @@
                 </ul>
             </div>
         </div>
-
-        <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-            <p class="text-xs leading-5 text-slate-500 text-center">
-                &copy; {new Date().getFullYear()} Tbilisi Hack Club. All rights reserved.
+        <div class="mt-8 border-t border-gray-700 pt-4 text-center">
+            <p>
+                &copy; {new Date().getFullYear()} Tbilisi Hack Club. {$_(
+                    "footer.right",
+                )}
             </p>
         </div>
     </div>
 </footer>
+
+<style>
+    @media (max-width: 768px) {
+        .container {
+            margin: 20px;
+        }
+    }
+</style>

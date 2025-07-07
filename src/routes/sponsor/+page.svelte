@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { _ } from "svelte-i18n";
 
     // Canvas and particle variables
     let canvas;
@@ -89,14 +90,14 @@
     <canvas bind:this={canvas} id="background-canvas"></canvas>
     <main>
         <div class="content-scroller">
-            <!-- Why Sponsor Us Section -->
             <section id="why-sponsor">
-                <h2 class="section-title">Why Sponsor Us?</h2>
+                <h2 class="section-title">
+                    {$_("sponsor_page.why_sponsor.title")}
+                </h2>
                 <p class="section-subtitle">
-                    Your support empowers our community and helps us continue.
+                    {$_("sponsor_page.why_sponsor.subtitle")}
                 </p>
                 <div class="benefits-grid">
-                    <!-- Benefit 1 -->
                     <div class="benefit-card">
                         <div class="benefit-icon-wrapper">
                             <svg
@@ -113,13 +114,13 @@
                                 ></path></svg
                             >
                         </div>
-                        <h3 class="benefit-title">We are free</h3>
+                        <h3 class="benefit-title">
+                            {$_("sponsor_page.benefits.free.title")}
+                        </h3>
                         <p class="benefit-text">
-                            Our team works every day and night, while keeping
-                            nothing for ourselves.
+                            {$_("sponsor_page.benefits.free.text")}
                         </p>
                     </div>
-                    <!-- Benefit 2 -->
                     <div class="benefit-card">
                         <div class="benefit-icon-wrapper">
                             <svg
@@ -137,14 +138,12 @@
                             >
                         </div>
                         <h3 class="benefit-title">
-                            Functioning of the club is expensive
+                            {$_("sponsor_page.benefits.expensive.title")}
                         </h3>
                         <p class="benefit-text">
-                            Our club costs a lot of money to operate, which
-                            comes out of our pocket.
+                            {$_("sponsor_page.benefits.expensive.text")}
                         </p>
                     </div>
-                    <!-- Benefit 3 -->
                     <div class="benefit-card">
                         <div class="benefit-icon-wrapper">
                             <svg
@@ -161,29 +160,31 @@
                                 ></path></svg
                             >
                         </div>
-                        <h3 class="benefit-title">Community Impact</h3>
+                        <h3 class="benefit-title">
+                            {$_("sponsor_page.benefits.impact.title")}
+                        </h3>
                         <p class="benefit-text">
-                            Invest in the local tech education and help foster
-                            innovation and collaboration.
+                            {$_("sponsor_page.benefits.impact.text")}
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Contact Section -->
             <section id="contact">
-                <h2 class="section-title">Ready to Become a Sponsor?</h2>
+                <h2 class="section-title">
+                    {$_("sponsor_page.contact.title")}
+                </h2>
                 <p class="contact-subtitle">
-                    We'd love to partner with you. For custom packages or any
-                    questions, please reach out to our sponsorship team.
+                    {$_("sponsor_page.contact.subtitle")}
                 </p>
                 <div class="contact-actions">
                     <a href="mailto:tbilisihc@yahoo.com" class="cta-button"
-                        >Sponsor Us</a
+                        >{$_("sponsor_page.contact.button")}</a
                     >
                     <p class="patreon-link">
-                        Or, <a href="https://www.patreon.com/tbilisihc"
-                            >support us on Patreon</a
+                        {$_("sponsor_page.patreon.text")}
+                        <a href="https://www.patreon.com/tbilisihc"
+                            >{$_("sponsor_page.patreon.link_text")}</a
                         >
                     </p>
                 </div>

@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { _ } from "svelte-i18n";
 
     // State variables for the form
     let githubUsername = "";
@@ -107,7 +108,9 @@
             const result = await response.json();
 
             if (!response.ok) {
-                throw new Error(result.message || "An unknown error occurred.");
+                throw new Error(
+                    result.message || $_("github_invite_page.unknown_error"),
+                );
             }
 
             successMessage = result.message;
@@ -116,7 +119,7 @@
             if (err instanceof Error) {
                 errorMessage = err.message;
             } else {
-                errorMessage = "An unknown error occurred.";
+                errorMessage = $_("github_invite_page.unknown_error");
             }
         } finally {
             isLoading = false;
@@ -128,17 +131,19 @@
     <canvas bind:this={canvas} id="background-canvas"></canvas>
     <main>
         <div class="container">
-            <h1>Invite to GitHub</h1>
-            <p>Enter a GitHub username to send them an invitation.</p>
+            <h1>{$_("github_invite_page.title")}</h1>
+            <p>{$_("github_invite_page.subtitle")}</p>
 
             <form on:submit|preventDefault={handleInvite}>
                 <div class="form-group">
-                    <label for="github-username">GitHub Username</label>
+                    <label for="github-username"
+                        >{$_("github_invite_page.form_label")}</label
+                    >
                     <input
                         id="github-username"
                         type="text"
                         bind:value={githubUsername}
-                        placeholder="e.g., octocat"
+                        placeholder={$_("github_invite_page.placeholder")}
                         required
                         disabled={isLoading}
                     />
@@ -151,9 +156,9 @@
                 >
                     {#if isLoading}
                         <div class="spinner"></div>
-                        <span>Sending...</span>
+                        <span>{$_("github_invite_page.loading_text")}</span>
                     {:else}
-                        <span>Send Invitation</span>
+                        <span>{$_("github_invite_page.button_text")}</span>
                     {/if}
                 </button>
             </form>

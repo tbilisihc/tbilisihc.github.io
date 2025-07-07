@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { _, locale } from "svelte-i18n";
 
     let showSuccessMessage = false;
 
@@ -72,21 +73,13 @@
                 const apiUrl =
                     "https://tbilisihc-auto-email.vercel.app/api/welcome";
 
-                // 1. Create the subject and message body content here in the frontend.
-                // The Go backend will wrap this message with the header and footer.
-                const subject = `Welcome to Tbilisi Hack Club, ${name}!`;
-                const messageBody = `
-                    <h1>Hi, ${name}!</h1>
-                    <p>Welcome to <strong>Tbilisi Hack Club</strong>! We've received your request to join and we're thrilled to have you on board. We will be in touch personally very soon.</p>
-                    <p>In the meantime, feel free to check out our social media channels to see what we're up to:</p>
-                    <div style="margin: 20px 0;">
-                        <a href="https://t.me/tbilisihc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #1DB7FE; font-weight: bold;">Telegram</a> &bull;
-                        <a href="https://x.com/tbilisi_hc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #1DB7FE; font-weight: bold;">X (Twitter)</a> &bull;
-                        <a href="https://facebook.com/tbilisihc" style="display: inline-block; margin: 0 10px; text-decoration: none; color: #1DB7FE; font-weight: bold;">Facebook</a>
-                    </div>
-                    <p>Have a great day!</p>
-                    <p>Best regards,<br>Tbilisi Hack Club Administration</p>
-                `;
+                // 1. Get translated content using the $_ store.
+                const subject = $_("join_page.welcome_email.subject", {
+                    values: { name },
+                });
+                const messageBody = $_("join_page.welcome_email.body_html", {
+                    values: { name },
+                });
 
                 // 2. Assemble the final payload for the Go backend.
                 const emailData = {
@@ -145,7 +138,9 @@
             }
 
             // --- Execute Calls and Update UI ---
-            const discordMessage = `New signup \n Name: ${name}\n Email: ${email}\n Phone: ${phone}`;
+            const discordMessage = $_("join_page.discord_notification", {
+                values: { name, email, phone },
+            });
 
             // Fire off all requests concurrently
             Promise.all([
@@ -159,7 +154,7 @@
 
             // Redirect after a short delay
             setTimeout(() => {
-                location.href = "/";
+                location.href = `/${$locale || ""}`;
             }, 2000);
         });
     });
@@ -207,53 +202,55 @@
         {#if showSuccessMessage}
             <div class="success-message">
                 <h2 class="text-2xl font-bold text-green-700">
-                    Thank you for signing up!
+                    {$_("join_page.success_message.title")}
                 </h2>
                 <p class="text-gray-600 mt-2">
-                    We've received your information. Redirecting you to the
-                    homepage shortly...
+                    {$_("join_page.success_message.subtitle")}
                 </p>
             </div>
         {:else}
             <div class="form-header">
-                <h1 class="page-title">Join the Club</h1>
+                <h1 class="page-title">{$_("join_page.title")}</h1>
                 <p class="page-subtitle">
-                    Fill out the form below to get started on your journey with
-                    us.
+                    {$_("join_page.subtitle")}
                 </p>
             </div>
             <form class="space-y-6" id="form" novalidate>
                 <div>
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label"
+                        >{$_("join_page.form.name_label")}</label
+                    >
                     <input
                         type="text"
                         name="name"
                         id="name"
-                        placeholder="Your Name"
+                        placeholder={$_("join_page.form.name_placeholder")}
                         class="form-input"
                         required
                     />
                 </div>
                 <div>
-                    <label for="email" class="form-label">Email Address</label>
+                    <label for="email" class="form-label"
+                        >{$_("join_page.form.email_label")}</label
+                    >
                     <input
                         type="email"
                         name="email"
                         id="email"
                         class="form-input"
-                        placeholder="you@example.com"
+                        placeholder={$_("join_page.form.email_placeholder")}
                         required
                     />
                 </div>
                 <div>
                     <label for="phone-number" class="form-label"
-                        >Phone Number</label
+                        >{$_("join_page.form.phone_label")}</label
                     >
                     <input
                         type="tel"
                         name="phone-number"
                         id="phone-number"
-                        placeholder="+995 123 456 789"
+                        placeholder={$_("join_page.form.phone_placeholder")}
                         class="form-input"
                         required
                     />
@@ -269,17 +266,13 @@
                     </div>
                     <div class="ml-3 text-sm">
                         <label for="terms" class="text-gray-500"
-                            >I accept the <a
-                                class="font-medium text-blue-600 hover:underline"
-                                href="https://tbilisi.hackclub.com/privacy-policy"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                >Terms and Conditions</a
-                            ></label
+                            >{@html $_("join_page.form.terms_html")}</label
                         >
                     </div>
                 </div>
-                <button type="submit" class="submit-button">Sign Up</button>
+                <button type="submit" class="submit-button"
+                    >{$_("join_page.form.submit_button")}</button
+                >
             </form>
         {/if}
     </div>
