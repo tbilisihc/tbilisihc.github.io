@@ -154,7 +154,7 @@
 
             // Redirect after a short delay
             setTimeout(() => {
-                location.href = `/${$locale || ""}`;
+                location.href = `/`;
             }, 2000);
         });
     });
