@@ -58,7 +58,7 @@
         <div class="hidden md:flex items-center space-x-8">
             {#each navigation.header as item}
                 <a href={item.href} class="text-gray-600 hover:text-gray-800">
-                    {$_(`${item.name}`)}
+                    {@html $_(`${item.name}`)}
                 </a>
             {/each}
             <LanguageSelector />
@@ -72,21 +72,15 @@
             class="md:hidden"
         >
             <div class="px-6 pt-2 pb-4 space-y-3">
-                <a
-                    href="/about"
-                    class="block text-gray-700 hover:text-blue-500 transition-colors py-2"
-                    >About</a
-                >
-                <a
-                    href="/events"
-                    class="block text-gray-700 hover:text-blue-500 transition-colors py-2"
-                    >Events</a
-                >
-                <a
-                    href="/join"
-                    class="block mt-2 bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors text-center"
-                    >Join</a
-                >
+                {#each navigation.header as item}
+                    <a
+                        href={item.href}
+                        class="block text-gray-700 hover:text-blue-500 transition-colors py-2"
+                    >
+                        {@html $_(`${item.name}`)}
+                    </a>
+                {/each}
+                <LanguageSelector />
             </div>
         </div>
     {/if}

@@ -1,7 +1,9 @@
 <script lang="js">
     import sponsors from "$lib/arrays/sponsors.js";
+    import { _ } from "svelte-i18n";
 </script>
 
++page.svelte
 <svelte:head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,17 +44,16 @@
                 <h2
                     class="text-4xl md:text-6xl font-black mb-4 leading-tight font-heading"
                 >
-                    It's time to build in Tbilisi.
+                    {$_("homepage.hero_main.title")}
                 </h2>
                 <p
                     class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-blue-100/80"
                 >
-                    A club for students who love to code, create, and launch
-                    their ideas. Welcome to the first Hack Club in Tbilisi,
-                    where you learn to code by building things you're passionate
-                    about.
+                    {$_("homepage.hero_main.description")}
                 </p>
-                <a href="/join" class="cta-button">Become a Member</a>
+                <a href="/join" class="cta-button"
+                    >{$_("homepage.hero_main.cta_button")}</a
+                >
             </div>
         </section>
 
@@ -65,14 +66,10 @@
                     <h3
                         class="text-3xl md:text-4xl font-extrabold mb-8 font-heading"
                     >
-                        This is your club.
+                        {$_("homepage.about.title")}
                     </h3>
                     <p class="text-lg text-gray-600 leading-relaxed">
-                        Tbilisi Hack Club is a community of young makers,
-                        coders, and creators. Our philosophy is simple: the best
-                        way to learn is by doing. We provide the space,
-                        community, and support. You bring your curiosity and
-                        ideas. No experience required.
+                        {$_("homepage.about.description")}
                     </p>
                 </div>
             </div>
@@ -86,7 +83,7 @@
                 <h3
                     class="text-3xl md:text-4xl font-extrabold text-black mb-12 text-center font-heading"
                 >
-                    What's Happening?
+                    {$_("homepage.events.title")}
                 </h3>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="event-card">
@@ -106,11 +103,10 @@
                             >
                         </div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">
-                            Workshops
+                            {$_("homepage.events.cards.workshops.title")}
                         </h4>
                         <p class="text-gray-600">
-                            Dive into new technologies with hands-on,
-                            project-based workshops, from web dev to AI.
+                            {$_("homepage.events.cards.workshops.description")}
                         </p>
                     </div>
                     <div class="event-card">
@@ -130,11 +126,10 @@
                             >
                         </div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">
-                            Club Meetings
+                            {$_("homepage.events.cards.meetings.title")}
                         </h4>
                         <p class="text-gray-600">
-                            Share what you're working on, get help from peers,
-                            and find collaborators for new projects.
+                            {$_("homepage.events.cards.meetings.description")}
                         </p>
                     </div>
                     <div class="event-card">
@@ -154,11 +149,10 @@
                             >
                         </div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">
-                            Hackathons
+                            {$_("homepage.events.cards.hackathons.title")}
                         </h4>
                         <p class="text-gray-600">
-                            Join high-energy coding events to build amazing
-                            projects in a single weekend.
+                            {$_("homepage.events.cards.hackathons.description")}
                         </p>
                     </div>
                 </div>
@@ -176,7 +170,7 @@
                 <h3
                     class="text-3xl md:text-4xl font-extrabold mb-12 text-center font-heading"
                 >
-                    Our Friends & Supporters
+                    {$_("homepage.sponsors.title")}
                 </h3>
                 <div
                     class="flex justify-center items-center gap-x-12 gap-y-8 flex-wrap"
@@ -205,7 +199,7 @@
                     <a
                         href="/sponsor"
                         class="text-black-600 hover:text-blue-800 underline"
-                        >Want to sponsor us?</a
+                        >{$_("homepage.sponsors.cta_link")}</a
                     >
                 </div>
             </div>

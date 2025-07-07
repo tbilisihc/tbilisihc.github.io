@@ -1,5 +1,6 @@
 <script lang="js">
     import { Events } from "$lib/arrays/events.js";
+    import { _ } from "svelte-i18n";
 
     const upcomingEvents = Events.filter((event) => !event.Past);
     const pastEvents = Events.filter((event) => event.Past);
@@ -44,16 +45,14 @@
 
 <div class="events-page-container">
     <section class="animated-section">
-        <h1 class="page-title">Events</h1>
+        <h1 class="page-title">{$_("events_page.title")}</h1>
         <p class="page-subtitle">
-            Join us for workshops, hackathons, and more. Let's build something
-            amazing together.
+            {$_("events_page.subtitle")}
         </p>
     </section>
 
-    <!-- Upcoming Events Section -->
     <section class="animated-section" style="animation-delay: 200ms;">
-        <h2 class="section-title">Upcoming Events</h2>
+        <h2 class="section-title">{$_("events_page.upcoming_title")}</h2>
         {#if upcomingEvents.length > 0}
             <div class="events-grid">
                 {#each upcomingEvents as event, i}
@@ -78,7 +77,7 @@
                                 href="/events/{event.Slug}"
                                 class="details-button"
                             >
-                                View Details
+                                {$_("events_page.details_button")}
                             </a>
                         </div>
                     </div>
@@ -87,16 +86,15 @@
         {:else}
             <div class="no-events-card">
                 <p>
-                    No upcoming events scheduled at the moment. Check back soon!
+                    {$_("events_page.no_upcoming_message")}
                 </p>
             </div>
         {/if}
     </section>
 
-    <!-- Past Events Section -->
     {#if pastEvents.length > 0}
         <section class="animated-section" style="animation-delay: 400ms;">
-            <h2 class="section-title">Past Events</h2>
+            <h2 class="section-title">{$_("events_page.past_title")}</h2>
             <div class="events-grid past-events">
                 {#each pastEvents as event, i}
                     <div
@@ -120,7 +118,7 @@
                                 href="/events/{event.Slug}"
                                 class="details-button"
                             >
-                                View Details
+                                {$_("events_page.details_button")}
                             </a>
                         </div>
                     </div>
