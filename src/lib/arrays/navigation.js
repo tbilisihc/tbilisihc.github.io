@@ -10,15 +10,9 @@ const navigation = {
   header: [
     { name: "navigation.about", href: "/about" },
     { name: "navigation.events", href: "/events" },
-    { name: "navigation.join", href: "/join" }
+    { name: "navigation.join", href: "/join" },
   ],
-  footer: {
-    about: "this is about",
-    rights: "",
-
-  },
-
-
+  
   social: [
     {
       name: "Instagram",
@@ -69,4 +63,4 @@ const navigation = {
   ],
 };
 
-export default navigation
+export default navigation;
