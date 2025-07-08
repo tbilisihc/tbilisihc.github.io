@@ -181,12 +181,17 @@
                     <a href="mailto:tbilisihc@yahoo.com" class="cta-button"
                         >{$_("sponsor_page.contact.button")}</a
                     >
+                    
                     <p class="patreon-link">
                         {$_("sponsor_page.patreon.text")}
                         <a href="https://www.patreon.com/tbilisihc"
                             >{$_("sponsor_page.patreon.link_text")}</a
-                        >
+                        >, 
+                        <a href="https://ko-fi.com/tbilisihc"
+                            >Ko-fi</a>
                     </p>
+
+                    
                 </div>
             </section>
         </div>
