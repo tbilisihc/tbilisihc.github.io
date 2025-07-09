@@ -1,0 +1,18 @@
+# This option prevents users from creating blank issues,
+# encouraging them to use one of the templates you've defined.
+blank_issues_enabled: false
+
+# This section defines the issue templates that will be offered to users.
+contact_links:
+  - name: 🐛 Report a Bug
+    url: /../../issues/new?template=bug_report.md
+    about: Something isn't working as expected. Please help us fix it.
+  - name: ✨ Request a Feature
+    url: /../../issues/new?template=feature_request.md
+    about: Suggest a new idea or enhancement for the project.
+  - name: ❓ Ask a Question or Get Support
+    url: /../../issues/new?template=question.md
+    about: If you have a question, we're here to help.
+  - name: 🌐 Visit our Website
+    url: https://tbilisi.hackclub.com/
+    about: For general information, please see our main site.
