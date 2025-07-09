@@ -1,6 +1,5 @@
 # Tbilisi Hack Club Website
 
-![Website](https://img.shields.io/website?url=https://tbilisi.hackclub.com)
 [![CI](https://github.com/tbilisihc/tbilisihc.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/tbilisihc/tbilisihc.github.io/actions/workflows/ci.yml)
 [![GitHub pages](https://github.com/tbilisihc/tbilisihc.github.io/actions/workflows/deploy.yaml/badge.svg)](https://github.com/tbilisihc/tbilisihc.github.io/actions/workflows/deploy.yaml)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
