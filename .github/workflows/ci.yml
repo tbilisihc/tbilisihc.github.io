@@ -2,32 +2,45 @@ name: Test buildability
 
 on:
   pull_request:
-    branches: 'master'
+    branches:
+      - 'master'
 
 jobs:
   build:
-	runs-on: ubuntu-latest
-	steps:
-	  - name: Checkout
-		uses: actions/checkout@v4
-	  - name: Install Node.js
+    # Specifies the runner environment for the job
+    runs-on: ubuntu-latest
+
+    # A job is a sequence of steps
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js environment
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-		  node-version: 20
-		   cache: npm
-	  - name: Install dependencies
-		run: npm install
-	  - name: Build
-		run: npm run build
-	  - name: Check build output
-		run: |
-		  if [ ! -d "build" ]; then
-			echo "Build directory does not exist. Build failed.";
-			exit 1;
-		  fi
-		  if [ -z "$(ls -A build)" ]; then
-			echo "Build directory is empty. Build failed.";
-			exit 1;
-		  fi
-		  echo "Build output is present and non-empty.";
-		  echo "Build successful.";
+          node-version: 20
+          cache: 'npm' # Cache npm dependencies
+
+      # Step 3: Install project dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the project
+      - name: Build
+        run: npm run build
+
+      # Step 5: Verify that the build output exists and is not empty
+      - name: Check build output
+        run: |
+          if [ ! -d "build" ]; then
+            echo "Build directory does not exist. Build failed."
+            exit 1
+          fi
+          if [ -z "$(ls -A build)" ]; then
+            echo "Build directory is empty. Build failed."
+            exit 1
+          fi
+          echo "Build output is present and non-empty."
+          echo "Build successful."
