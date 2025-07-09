@@ -184,5 +184,40 @@
       "text": "Or,",
       "link_text": "support us on Patreon"
     }
+  },
+  "contact_page": {
+  "title": "Get in Touch",
+  "subtitle": "Have a question, a partnership idea, or just want to say hello? We'd love to hear from you.",
+  "form_title": "Send Us a Message",
+  "form": {
+    "name_label": "Full Name",
+    "name_placeholder": "Jane Doe",
+    "email_label": "Email Address",
+    "email_placeholder": "you@example.com",
+    "subject_label": "Subject",
+    "subject_placeholder": "Let's talk about...",
+    "message_label": "Message",
+    "message_placeholder": "Your message here...",
+    "submit_button": "Send Message",
+    "submitting_button": "Sending..."
+  },
+  "feedback": {
+    "success": "Thank you! Your message has been sent successfully.",
+    "error": "An error occurred: {status}. Please try again.",
+    "network_error": "A network error occurred. Please check your connection and try again."
+  },
+  "contact_info_title": "Contact Information",
+  "socials_title": "Or here:",
+  "auto_reply": {
+    "subject": "Regarding your message to Tbilisi Hack Club",
+    "message_body": "Thank you for leaving a message!\n\nWe will get back to you soon.\n\nWhile you wait, you can check out our social media accounts:\nhttps://linktr.ee/tbilisihc\n\nHave a great day!\nBest regards,\nTbilisi Hack Club Administration"
+  },
+  "discord_notification": {
+    "title": "**New Contact Form Submission**",
+    "from": "**From:** {name} ({email})",
+    "subject": "**Subject:** {subject}",
+    "no_subject": "No Subject",
+    "message": "**Message:**"
   }
+}
 }
