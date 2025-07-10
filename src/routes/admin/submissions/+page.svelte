@@ -79,32 +79,30 @@
 	}
 
 	/**
-	 * Toggles the 'accepted' status of a submission.
+	 * Revokes an accepted submission by setting its status to 'pending'.
 	 */
-	async function toggleAccept(submission) {
+	async function revokeSubmission(submission) {
+		if (!confirm(`Are you sure you want to revoke acceptance for ${submission.name}?`)) return;
+
 		const originalStatus = submission.accepted;
-		// Optimistically update the UI
-		submission.accepted = !submission.accepted;
-		submissions = submissions; // Trigger reactivity
+		submission.accepted = false; // Optimistic update
+		submissions = submissions;
 
 		try {
 			const response = await fetch(`${UPDATE_API}/${submission.id}`, {
 				method: 'PATCH',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ accepted: !originalStatus })
+				body: JSON.stringify({ accepted: false })
 			});
 
 			if (!response.ok) {
-				// Revert on failure
-				submission.accepted = originalStatus;
+				submission.accepted = originalStatus; // Revert on failure
 				submissions = submissions;
-				throw new Error('Failed to update.');
+				throw new Error('Failed to revoke.');
 			}
-			// Optionally, re-fetch to ensure data consistency
-			// await fetchAndRenderSubmissions();
 		} catch (error) {
-			console.error('Update error:', error);
-			alert('Could not update the submission.');
+			console.error('Revoke error:', error);
+			alert('Could not revoke the submission.');
 		}
 	}
 
@@ -112,10 +110,9 @@
 	 * Deletes a submission.
 	 */
 	async function deleteSubmission(id) {
-		if (confirm(`Are you sure you want to delete submission ${id}?`)) {
+		if (confirm(`Are you sure you want to permanently delete submission ${id}?`)) {
 			const originalSubmissions = [...submissions];
-			// Optimistically update UI
-			submissions = submissions.filter((sub) => sub.id !== id);
+			submissions = submissions.filter((sub) => sub.id !== id); // Optimistic update
 
 			try {
 				const response = await fetch(`${DELETE_API}/${id}`, {
@@ -123,8 +120,7 @@
 				});
 
 				if (!response.ok) {
-					// Revert on failure
-					submissions = originalSubmissions;
+					submissions = originalSubmissions; // Revert on failure
 					throw new Error('Failed to delete.');
 				}
 			} catch (error) {
@@ -229,12 +225,21 @@
 								</p>
 							</div>
 							<div class="flex-shrink-0 flex space-x-2">
-								<button
-									on:click={() => toggleAccept(sub)}
-									class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition text-sm"
-								>
-									{sub.accepted ? 'Revoke' : 'Accept'}
-								</button>
+								{#if sub.accepted}
+									<button
+										on:click={() => revokeSubmission(sub)}
+										class="bg-gray-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition text-sm"
+									>
+										Revoke
+									</button>
+								{:else}
+									<a
+										href={`/admin/submissions/email?id=${sub.id}&to=${sub.email}`}
+										class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition text-sm text-center"
+									>
+										Accept
+									</a>
+								{/if}
 								<button
 									on:click={() => deleteSubmission(sub.id)}
 									class="bg-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition text-sm"
