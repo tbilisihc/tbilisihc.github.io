@@ -9,7 +9,7 @@ Website (Code): [@andrinoff](https://github.com/andrinoff)
 
 English translation: [@andrinoff](https://github.com/andrinoff)
 
-Georgian translation: : [@asakura_anya](https://www.instagram.com/asakura_anya/), [@andrinoff](https://github.com/andrinoff)
+Georgian translation: : [@asakura_anya](https://www.instagram.com/asakura_anya/), [@andrinoff](https://github.com/andrinoff), [@proudpalmtree](https://www.instagram.com/proudpalmtree/)
 
 </p>
 
