@@ -36,7 +36,7 @@
                 phone: string,
             ) {
                 const apiUrl =
-                    "https://submissions-tbilisihc.netlify.app/.netlify/functions/add-submissions";
+                    "https://api.tbilisihc.andrinoff.com/.netlify/functions/add-submissions";
                 const submissionData = { name, email, phone };
                 try {
                     const response = await fetch(apiUrl, {
