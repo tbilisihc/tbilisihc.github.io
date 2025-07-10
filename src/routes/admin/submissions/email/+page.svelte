@@ -70,7 +70,7 @@
       const emailResponse = await fetch(EMAIL_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ to: toEmail, subject: subject, body: body }),
+        body: JSON.stringify({ recipient: toEmail, subject: subject, message: body }),
       });
 
       const emailResult = await emailResponse.json();
