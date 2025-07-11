@@ -67,4 +67,4 @@ We are committed to providing a welcoming and inclusive experience for everyone.
 
 ## 📜 License
 
-This project is licensed under [The Unlicense](http://unlicense.org/). This means it is free and unencumbered software released into the public domain.
+This project is licensed under [The Unlicense](http://unlicense.org/). 
