@@ -3,7 +3,7 @@
   import navigation from "$lib/arrays/navigation.js";
 </script>
 
-<footer class="footer-class bg-gray-800 text-white py-8">
+<footer class="bg-gray-800 text-white py-8">
   <div class="container mx-auto px-6">
     <div class="columns flex flex-wrap">
       <div class="mt-20 w-full md:w-1/2">
@@ -23,7 +23,7 @@
         </ul>
       </div>
       <div class="mt-20 w-full md:w-1/4">
-        <h3 class="footer-header text-lg font-bold">Social</h3>
+        <h3 class="text-lg font-bold">Social</h3>
         <ul class="mt-2 space-y-2">
           {#each navigation.social as item}
             <li>
@@ -49,3 +49,21 @@
     </div>
   </div>
 </footer>
+
+<style>
+  footer {
+    background-color: #1f2937; /* Gray 800 */
+    color: rgba(255, 255, 255, 0.702);
+  }
+  h3 {
+    color: #f3f4f6; /* Gray 200 */
+  }
+  @media (max-width: 1020px) {
+    .columns {
+      text-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+</style>
