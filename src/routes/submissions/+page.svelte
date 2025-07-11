@@ -45,9 +45,7 @@
 <div class="min-h-screen bg-slate-50 p-4 sm:p-6 lg:p-8">
   <div class="max-w-7xl mx-auto">
     <header class="text-center mb-12">
-      <h1
-        class="text-4xl sm:text-5xl font-extrabold text-gray-700"
-      >
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-700">
         Tbilisi Hack Club Submissions
       </h1>
     </header>
@@ -125,18 +123,3 @@
     </main>
   </div>
 </div>
-
-<style>
-  /* The animation style remains the same and works great! */
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  .animate-spin {
-    animation: spin 1s linear infinite;
-  }
-</style>
