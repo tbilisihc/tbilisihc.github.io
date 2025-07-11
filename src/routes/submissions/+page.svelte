@@ -46,7 +46,7 @@
   <div class="max-w-7xl mx-auto">
     <header class="text-center mb-12">
       <h1
-        class="text-4xl sm:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600"
+        class="text-4xl sm:text-5xl font-extrabold text-gray-700"
       >
         Tbilisi Hack Club Submissions
       </h1>
