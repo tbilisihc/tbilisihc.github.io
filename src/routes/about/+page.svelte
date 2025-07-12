@@ -201,9 +201,7 @@
             >
                 {#each team as teamMember}
                     <a
-                        href={teamMember.Url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/team/{teamMember.slug}"
                         class="text-center transition-transform duration-300 hover:scale-110 group"
                     >
                         <img
