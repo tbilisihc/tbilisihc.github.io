@@ -2,10 +2,8 @@ const navigation = {
   about: [
     { name: "navigation.about", href: "/about" },
     { name: "navigation.events", href: "/events" },
-    { name: "navigation.code_of_conduct", href: "/code-of-conduct" },
     { name: "navigation.contact", href: "/contact" },
     { name: "navigation.sponsor", href: "/sponsor" },
-    { name: "navigation.terms", href: "/terms-and-conditions" },
   ],
   header: [
     { name: "navigation.about", href: "/about" },

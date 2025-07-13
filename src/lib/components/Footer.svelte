@@ -20,6 +20,36 @@
               </a>
             </li>
           {/each}
+          <li>
+            <a
+              href={$_("documents.code_of_conduct")}
+              class="hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {$_("navigation.code_of_conduct")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={$_("documents.terms_and_conditions")}
+              class="hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {$_("navigation.terms")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={$_("documents.privacy_policy")}
+              class="hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {$_("navigation.privacy_policy")}
+            </a>
+          </li>
         </ul>
       </div>
       <div class="mt-20 w-full md:w-1/4">
