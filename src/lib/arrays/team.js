@@ -3,7 +3,6 @@ let team = [
   {
     Name: "Drew Smirnoff",
     slug: "drew",
-    Url: "https://tbilisi.hackclub.com/drew/",
     Title: "Founder & CEO",
     Joined: "2025",
     Bio: `<p>
@@ -19,8 +18,6 @@ let team = [
   {
     Name: "Boris Mirakov",
     slug: "bormir",
-    Avatar: "https://tbilisi.hackclub.com/bormir/avatar.png",
-    Url: "https://tbilisi.hackclub.com/bormir/",
     Title: "Social Media Team Lead",
     Joined: "2025",
     Bio: `<p>
@@ -34,8 +31,6 @@ let team = [
   {
     Name: "Zlata Chernova",
     slug: "zlataponchikk",
-    Avatar: "https://tbilisi.hackclub.com/zlataponchikk/avatar.png",
-    Url: "https://tbilisi.hackclub.com/zlataponchikk",
     Title: "Designer",
     Joined: "2025",
     Bio: `<p>

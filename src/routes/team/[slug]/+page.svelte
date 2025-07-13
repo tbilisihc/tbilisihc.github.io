@@ -13,28 +13,21 @@
 </script>
 
 <svelte:head>
-  <title>{member.Name}</title>
+  <title>{member.Name} | Tbilisi Hack Club</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
   <link
     rel="stylesheet"
     as="style"
     href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900"
   />
-  <style>
-    body {
-      font-family: "Manrope", "Noto Sans", sans-serif;
-    }
-  </style>
 </svelte:head>
 
 <div
   class="relative flex size-full min-h-screen flex-col bg-slate-100 text-slate-800 group/design-root overflow-x-hidden"
 >
-<div class="mt-8 text-center">
-  <a href="/about" class="">
-    &larr; Back to About Page
-  </a>
-</div>
+  <div class="mt-8 text-center">
+    <a href="/about" class=""> &larr; Back to About Page </a>
+  </div>
   <div
     class="layout-container flex h-full grow flex-col items-center justify-center p-4 sm:p-8"
   >
@@ -47,10 +40,11 @@
           <div
             class="flex flex-col items-center text-center md:items-start md:text-left"
           >
-            <div
+            <img
               class="mb-4 h-32 w-32 rounded-full bg-cover bg-center bg-no-repeat shadow-md sm:h-40 sm:w-40"
-              style="background-image: url('{member.Avatar}');"
-            ></div>
+              src="https://tbilisi.hackclub.com/assets/assets/team/{member.slug}.png"
+              alt="{member.Name}'s Avatar"
+            />
             <h1 class="text-3xl font-bold text-slate-900">{member.Name}</h1>
             <p class="text-lg text-indigo-600">{member.Title}</p>
             <p class="mt-1 text-sm text-slate-500">Joined in {member.Joined}</p>
@@ -67,8 +61,7 @@
 </div>
 
 <style>
-	* {
-		animation: floatIn 0.8s ease-out forwards;
-	}
+  * {
+    animation: floatIn 0.8s ease-out forwards;
+  }
 </style>
-
