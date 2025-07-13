@@ -205,7 +205,7 @@
                         class="text-center transition-transform duration-300 hover:scale-110 group"
                     >
                         <img
-                            src={teamMember.Avatar}
+                            src="https://tbilisi.hackclub.com/assets/assets/team/{teamMember.slug}.png"
                             alt={teamMember.Name}
                             class="rounded-full h-24 w-24 sm:h-32 sm:w-32 mb-3 shadow-lg mx-auto object-cover border-4 border-white group-hover:border-blue-300 transition-colors"
                             on:error={(e) => handleImgError(e, teamMember.Name)}
