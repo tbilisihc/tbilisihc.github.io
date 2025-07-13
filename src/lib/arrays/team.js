@@ -2,8 +2,7 @@
 let team = [
   {
     Name: "Drew Smirnoff",
-    slug: "drew-smirnoff",
-    Avatar: "https://tbilisi.hackclub.com/drew/avatar.png",
+    slug: "drew",
     Url: "https://tbilisi.hackclub.com/drew/",
     Title: "Founder & CEO",
     Joined: "2025",
