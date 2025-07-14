@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://tbilisi.hackclub.com/</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/about</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/events</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/contact</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/sponsor</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/join</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/code-of-conduct</loc>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tbilisi.hackclub.com/team/drew</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/team/bormir</loc>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/team/zlataponchikk</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://tbilisi.hackclub.com/events/git-and-github</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/events/introduction-to-python</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://tbilisi.hackclub.com/events/web-development-with-react</loc>
+    <priority>0.70</priority>
+  </url>
+</urlset>
